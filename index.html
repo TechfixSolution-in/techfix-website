@@ -1,58 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Techfix Solutions - IT Services</title>
+    <title>Techfix Solutions | Complete IT & Technical Services</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f7f6; color: #333; }
-        header { background-color: #0b2545; color: white; text-align: center; padding: 2rem 1rem; }
-        h1 { margin: 0; font-size: 2.2rem; }
-        p { font-size: 1.1rem; }
-        .container { max-width: 900px; margin: 2rem auto; padding: 0 1rem; }
-        .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 1.5rem; }
-        .card { background: white; padding: 1.5rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center; }
-        .card h3 { color: #134074; margin-top: 0; }
-        .contact-btn { display: inline-block; background-color: #25d366; color: white; padding: 0.8rem 1.5rem; text-decoration: none; border-radius: 5px; font-weight: bold; margin-top: 1rem; }
-        footer { text-align: center; padding: 1.5rem; background: #0b2545; color: white; margin-top: 3rem; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background: #f4f7f6; color: #333; line-height: 1.6; }
+        header { background: #0b2545; color: white; padding: 2.5rem 1rem; text-align: center; }
+        nav { background: #134074; padding: 1rem; text-align: center; sticky: top; }
+        nav a { color: white; text-decoration: none; margin: 0 15px; font-weight: 600; font-size: 1.05rem; }
+        nav a:hover { color: #8da9c4; }
+        .container { max-width: 1000px; margin: 2rem auto; padding: 0 1.5rem; }
+        .hero { background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); text-align: center; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .card { background: white; padding: 1.5rem; border-radius: 8px; border-left: 5px solid #134074; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .btn { display: inline-block; background: #25d366; color: white; padding: 0.8rem 1.8rem; text-decoration: none; border-radius: 5px; font-weight: bold; margin-top: 1rem; }
+        footer { background: #0b2545; color: white; text-align: center; padding: 1.5rem; margin-top: 3rem; }
     </style>
 </head>
 <body>
 
     <header>
         <h1>Techfix Solutions</h1>
-        <p>Complete IT Solutions Under One Roof</p>
+        <p>Complete IT & Technical Solutions Under One Roof</p>
     </header>
 
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="services.html">Services</a>
+        <a href="portfolio.html">Work Details</a>
+        <a href="contact.html">Contact Us</a>
+    </nav>
+
     <div class="container">
-        <h2 style="text-align: center;">Our Services</h2>
-        <div class="services">
-            <div class="card">
-                <h3>Computer & Laptop Repair</h3>
-                <p>Hardware diagnostics, OS installation, and performance upgrades.</p>
-            </div>
-            <div class="card">
-                <h3>MIS & Data Entry</h3>
-                <p>Advanced Excel automation, MIS reporting, and data processing.</p>
-            </div>
-            <div class="card">
-                <h3>Networking & CCTV</h3>
-                <p>Office networking setup, router configuration, and security systems.</p>
-            </div>
-            <div class="card">
-                <h3>Aadhaar & Technical Support</h3>
-                <p>Software installation, client setup, and hardware integration.</p>
-            </div>
+        <div class="hero">
+            <h2>Welcome to Techfix Solutions</h2>
+            <p>Aapke business aur personal IT needs ke liye reliable, fast aur professional services. Computer repair se lekar advanced Excel automation tak, hum har technical issue ka solution dete hain.</p>
+            <a href="https://wa.me/918859505384" class="btn" target="_blank">WhatsApp Direct Help</a>
         </div>
 
-        <div style="text-align: center; margin-top: 2.5rem;">
-            <h3>Need Quick Support?</h3>
-            <a href="https://wa.me/918859505384" class="contact-btn" target="_blank">Contact on WhatsApp</a>
+        <h2 style="text-align: center; margin-top: 3rem;">Main Offerings</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Hardware & Repairs</h3>
+                <p>Desktop & Laptop diagnostics, chip-level repairs, OS installation aur performance speedup.</p>
+            </div>
+            <div class="card">
+                <h3>Excel & MIS Solutions</h3>
+                <p>Advanced Excel reporting, formula creation, automated data processing aur MIS dashboards.</p>
+            </div>
+            <div class="card">
+                <h3>Network & Security</h3>
+                <p>Office networking setup, Wi-Fi configuration aur CCTV camera installation services.</p>
+            </div>
         </div>
     </div>
 
     <footer>
-        <p>&copy; 2026 Techfix Solutions | Bareilly, Uttar Pradesh</p>
+        <p>&copy; 2026 Techfix Solutions | Bareilly, UP</p>
     </footer>
 
 </body>
