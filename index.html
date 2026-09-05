@@ -3,227 +3,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Techfix Solutions | Premium IT & Technical Services</title>
+    <title>Techfix Solutions | Premium IT Services</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, sans-serif; }
-        body { background: #0b2545; color: #ffffff; line-height: 1.6; overflow-x: hidden; scroll-behavior: smooth; }
+        body { background: #0b2545; color: #ffffff; line-height: 1.6; overflow-x: hidden; }
 
-        /* Full Screen Intro / Hero Section */
-        .intro-screen {
+        /* Animated High-End Background Theme */
+        .welcome-screen {
             height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            background: linear-gradient(135deg, #0b2545 0%, #134074 100%);
+            background: linear-gradient(-45deg, #0b2545, #134074, #003566, #000814);
+            background-size: 400% 400%;
+            animation: gradientBG 12s ease infinite;
             padding: 2rem;
-            position: relative;
         }
 
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Top Logo Styling */
+        .top-logo {
+            width: 110px;
+            height: auto;
+            margin-bottom: 1.2rem;
+            filter: drop-shadow(0px 4px 10px rgba(0, 242, 254, 0.4));
+            transition: transform 0.3s ease;
+        }
+        .top-logo:hover { transform: scale(1.08); }
+
         .brand-title {
-            font-size: 3.5rem;
+            font-size: 3.2rem;
             font-weight: 800;
             letter-spacing: 2px;
             background: linear-gradient(90deg, #00f2fe, #4facfe);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.4rem;
             text-transform: uppercase;
         }
 
         .brand-tagline {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             color: #8da9c4;
-            margin-bottom: 2.5rem;
+            margin-bottom: 2rem;
             font-weight: 300;
         }
 
-        .enter-btn {
+        /* Welcome Button */
+        .welcome-btn {
             background: linear-gradient(45deg, #00f2fe, #4facfe);
             color: #0b2545;
-            padding: 1rem 2.5rem;
+            padding: 0.9rem 2.8rem;
             font-size: 1.2rem;
-            font-weight: bold;
+            font-weight: 800;
             border: none;
             border-radius: 50px;
             cursor: pointer;
-            box-shadow: 0 10px 25px rgba(0, 242, 254, 0.3);
+            box-shadow: 0 8px 20px rgba(0, 242, 254, 0.4);
             transition: all 0.3s ease;
             text-decoration: none;
             display: inline-block;
+            margin-bottom: 2.2rem;
+            letter-spacing: 1px;
         }
 
-        .enter-btn:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 15px 30px rgba(0, 242, 254, 0.5);
+        .welcome-btn:hover {
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 0 12px 25px rgba(0, 242, 254, 0.6);
         }
 
-        /* Navigation Menu */
-        nav {
-            background: #081c33;
-            padding: 1rem;
+        /* Profile Photo Styling */
+        .profile-container {
             text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
 
-        nav a {
-            color: #e0e1dd;
-            text-decoration: none;
-            margin: 0 18px;
-            font-weight: 600;
-            font-size: 1.05rem;
-            transition: color 0.3s;
+        .profile-img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #00f2fe;
+            box-shadow: 0 0 20px rgba(0, 242, 254, 0.5);
+            transition: transform 0.3s ease;
         }
 
-        nav a:hover { color: #00f2fe; }
+        .profile-img:hover { transform: scale(1.05); }
 
-        /* Main Content */
-        .container { max-width: 1100px; margin: 4rem auto; padding: 0 1.5rem; }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.2rem;
-            margin-bottom: 2.5rem;
-            color: #ffffff;
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 4px;
-            background: #00f2fe;
-            margin: 10px auto 0;
-            border-radius: 2px;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .card {
-            background: #134074;
-            padding: 2rem;
-            border-radius: 12px;
-            border: 1px solid rgba(255,255,255,0.05);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-            transition: transform 0.3s, border-color 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-8px);
-            border-color: #00f2fe;
-        }
-
-        .card h3 {
-            color: #00f2fe;
-            font-size: 1.4rem;
-            margin-bottom: 1rem;
-        }
-
-        .card p { color: #d1d5db; font-size: 1rem; }
-
-        .cta-box {
-            background: linear-gradient(135deg, #134074 0%, #081c33 100%);
-            border-radius: 15px;
-            padding: 3rem 2rem;
-            text-align: center;
-            margin-top: 4rem;
-            border: 1px solid rgba(0, 242, 254, 0.2);
-        }
-
-        .wa-btn {
-            display: inline-block;
-            background: #25d366;
-            color: white;
-            padding: 0.9rem 2rem;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
+        .owner-title {
+            margin-top: 0.8rem;
             font-size: 1.1rem;
-            margin-top: 1.5rem;
-            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
-            transition: transform 0.3s;
+            color: #e0e1dd;
+            font-weight: 600;
         }
 
-        .wa-btn:hover { transform: scale(1.05); }
+        .owner-sub {
+            font-size: 0.9rem;
+            color: #8da9c4;
+        }
 
         footer {
             background: #051329;
             color: #8da9c4;
             text-align: center;
-            padding: 2rem;
-            margin-top: 5rem;
-            font-size: 0.95rem;
+            padding: 1.5rem;
+            font-size: 0.9rem;
         }
 
         @media (max-width: 768px) {
-            .brand-title { font-size: 2.3rem; }
-            .brand-tagline { font-size: 1.1rem; }
-            nav a { display: inline-block; margin: 5px 10px; }
+            .brand-title { font-size: 2.2rem; }
+            .brand-tagline { font-size: 1rem; }
+            .top-logo { width: 90px; }
+            .profile-img { width: 120px; height: 120px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Full Screen Cover Page -->
-    <div class="intro-screen">
+    <!-- Professional First Page Layout -->
+    <div class="welcome-screen">
+        <!-- Top Logo -->
+        <img src="logo.png" alt="Techfix Solutions Logo" class="top-logo" onerror="this.style.display='none'">
+
+        <!-- Title & Tagline -->
         <h1 class="brand-title">Techfix Solutions</h1>
         <p class="brand-tagline">Complete IT & Technical Solutions Under One Roof</p>
-        <a href="#main-content" class="enter-btn">Welcome - Enter Site &darr;</a>
-    </div>
 
-    <!-- Navigation Menu -->
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About Us</a>
-        <a href="services.html">Services</a>
-        <a href="portfolio.html">Work Details</a>
-        <a href="contact.html">Contact Us</a>
-    </nav>
+        <!-- Only Welcome Button -->
+        <a href="about.html" class="welcome-btn">Welcome</a>
 
-    <!-- Main Content Section -->
-    <div class="container" id="main-content">
-        <h2 class="section-title">Our Key Capabilities</h2>
-        
-        <div class="grid">
-            <div class="card">
-                <h3>💻 Hardware & Repairs</h3>
-                <p>Desktop & Laptop diagnostics, chip-level repairs, SSD upgrades, OS setup, and complete system overhaul.</p>
-            </div>
-            <div class="card">
-                <h3>📊 Excel & MIS Automation</h3>
-                <p>Advanced Excel reporting, custom dashboards, data cleansing, automated workflows, and structured business analytics.</p>
-            </div>
-            <div class="card">
-                <h3>📈 Tally & Accounting Setup</h3>
-                <p>Tally installation, data backup/recovery solutions, accounting support, and office workflow optimization.</p>
-            </div>
-            <div class="card">
-                <h3>🌐 Networking & CCTV</h3>
-                <p>Institutional LAN setup, Wi-Fi router configuration, network maintenance, and security camera installations.</p>
-            </div>
-            <div class="card">
-                <h3>⚙️ Technical Integration</h3>
-                <p>Driver configuration, biometric/scanner integration, specialized software setup, and client troubleshooting support.</p>
-            </div>
-            <div class="card">
-                <h3>⚡ Quick Support</h3>
-                <p>Fast diagnostic response for corporate offices, educational institutions, and personal client requirements.</p>
-            </div>
-        </div>
-
-        <div class="cta-box">
-            <h2>Need Instant Technical Assistance?</h2>
-            <p style="color: #8da9c4; margin-top: 0.5rem;">Connect with us directly on WhatsApp for quick resolution of your IT needs.</p>
-            <a href="https://wa.me/918859505384" class="wa-btn" target="_blank">Connect on WhatsApp</a>
+        <!-- Profile Photo Section Below Welcome -->
+        <div class="profile-container">
+            <img src="profile.jpg" alt="Mohd Shahrukh" class="profile-img">
+            <p class="owner-title">Mohd Shahrukh</p>
+            <p class="owner-sub">Proprietor & IT Specialist</p>
         </div>
     </div>
 
