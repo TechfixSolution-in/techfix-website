@@ -1,154 +1,824 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Techfix Solutions | Premium IT Services</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, sans-serif; }
-        body { background: #0b2545; color: #ffffff; line-height: 1.6; overflow-x: hidden; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        /* Animated High-End Background Theme */
-        .welcome-screen {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            background: linear-gradient(-45deg, #0b2545, #134074, #003566, #000814);
-            background-size: 400% 400%;
-            animation: gradientBG 12s ease infinite;
-            padding: 2rem;
-        }
+<title>TechFix Solutions | IT Services</title>
 
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
+<style>
 
-        /* Top Logo Styling */
-        .top-logo {
-            width: 110px;
-            height: auto;
-            margin-bottom: 1.2rem;
-            filter: drop-shadow(0px 4px 10px rgba(0, 242, 254, 0.4));
-            transition: transform 0.3s ease;
-        }
-        .top-logo:hover { transform: scale(1.08); }
+/* =========================
+   BASIC RESET
+========================= */
 
-        .brand-title {
-            font-size: 3.2rem;
-            font-weight: 800;
-            letter-spacing: 2px;
-            background: linear-gradient(90deg, #00f2fe, #4facfe);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 0.4rem;
-            text-transform: uppercase;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        .brand-tagline {
-            font-size: 1.2rem;
-            color: #8da9c4;
-            margin-bottom: 2rem;
-            font-weight: 300;
-        }
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #020b18;
+    color: white;
+    overflow-x: hidden;
+}
 
-        /* Welcome Button */
-        .welcome-btn {
-            background: linear-gradient(45deg, #00f2fe, #4facfe);
-            color: #0b2545;
-            padding: 0.9rem 2.8rem;
-            font-size: 1.2rem;
-            font-weight: 800;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            box-shadow: 0 8px 20px rgba(0, 242, 254, 0.4);
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-            margin-bottom: 2.2rem;
-            letter-spacing: 1px;
-        }
 
-        .welcome-btn:hover {
-            transform: translateY(-4px) scale(1.05);
-            box-shadow: 0 12px 25px rgba(0, 242, 254, 0.6);
-        }
+/* =========================
+   MAIN HERO
+========================= */
 
-        /* Profile Photo Styling */
-        .profile-container {
-            text-align: center;
-        }
+.hero {
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
 
-        .profile-img {
-            width: 140px;
-            height: 140px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid #00f2fe;
-            box-shadow: 0 0 20px rgba(0, 242, 254, 0.5);
-            transition: transform 0.3s ease;
-        }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-        .profile-img:hover { transform: scale(1.05); }
+    padding: 35px 20px 20px;
 
-        .owner-title {
-            margin-top: 0.8rem;
-            font-size: 1.1rem;
-            color: #e0e1dd;
-            font-weight: 600;
-        }
+    background:
+        radial-gradient(circle at 50% 15%, #064b85 0%, transparent 32%),
+        radial-gradient(circle at 10% 60%, #003d70 0%, transparent 30%),
+        radial-gradient(circle at 90% 65%, #003d70 0%, transparent 30%),
+        linear-gradient(135deg, #020b18, #031d35, #00111f);
+}
 
-        .owner-sub {
-            font-size: 0.9rem;
-            color: #8da9c4;
-        }
 
-        footer {
-            background: #051329;
-            color: #8da9c4;
-            text-align: center;
-            padding: 1.5rem;
-            font-size: 0.9rem;
-        }
+/* =========================
+   ANIMATED TECH GRID
+========================= */
 
-        @media (max-width: 768px) {
-            .brand-title { font-size: 2.2rem; }
-            .brand-tagline { font-size: 1rem; }
-            .top-logo { width: 90px; }
-            .profile-img { width: 120px; height: 120px; }
-        }
-    </style>
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        linear-gradient(rgba(0, 174, 255, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 174, 255, 0.08) 1px, transparent 1px);
+
+    background-size: 45px 45px;
+
+    mask-image: linear-gradient(
+        to bottom,
+        black,
+        transparent 85%
+    );
+
+    pointer-events: none;
+}
+
+
+/* =========================
+   GLOWING PARTICLES
+========================= */
+
+.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+
+    background: #00d9ff;
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 8px #00d9ff,
+        0 0 20px #008cff;
+
+    animation: float 5s infinite ease-in-out;
+}
+
+.p1 { left: 8%; top: 25%; }
+.p2 { left: 18%; top: 45%; animation-delay: 1s; }
+.p3 { left: 85%; top: 28%; animation-delay: 2s; }
+.p4 { left: 92%; top: 50%; animation-delay: 3s; }
+.p5 { left: 12%; top: 75%; animation-delay: 1.5s; }
+.p6 { left: 80%; top: 72%; animation-delay: 2.5s; }
+
+@keyframes float {
+
+    0%,100% {
+        transform: translateY(0);
+        opacity: .5;
+    }
+
+    50% {
+        transform: translateY(-30px);
+        opacity: 1;
+    }
+}
+
+
+/* =========================
+   LOGO
+========================= */
+
+.logo-box {
+    position: relative;
+    z-index: 2;
+
+    width: 150px;
+    height: 150px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 3px solid #00d9ff;
+
+    box-shadow:
+        0 0 15px #00d9ff,
+        0 0 40px rgba(0, 217, 255, .7),
+        inset 0 0 20px rgba(0, 140, 255, .4);
+
+    animation: logoGlow 3s infinite alternate;
+}
+
+.logo-box img {
+    width: 125px;
+    height: 125px;
+    object-fit: contain;
+}
+
+@keyframes logoGlow {
+
+    from {
+        box-shadow:
+            0 0 15px #00d9ff,
+            0 0 35px rgba(0,217,255,.5);
+    }
+
+    to {
+        box-shadow:
+            0 0 25px #00d9ff,
+            0 0 65px rgba(0,217,255,.9);
+    }
+}
+
+
+/* =========================
+   BRAND NAME
+========================= */
+
+.brand {
+    position: relative;
+    z-index: 2;
+
+    margin-top: 15px;
+
+    text-align: center;
+}
+
+.brand h1 {
+
+    font-size: clamp(3rem, 8vw, 6.5rem);
+
+    font-weight: 900;
+
+    letter-spacing: 5px;
+
+    text-transform: none;
+
+    background:
+        linear-gradient(
+            180deg,
+            #ffffff 10%,
+            #d7eaff 40%,
+            #00cfff 75%,
+            #007cff 100%
+        );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    text-shadow:
+        0 0 20px rgba(0, 195, 255, .5);
+
+    line-height: 1;
+}
+
+
+/* TechFix highlighted */
+
+.brand h1 span {
+    background:
+        linear-gradient(
+            180deg,
+            #ffffff,
+            #00eaff 55%,
+            #008cff
+        );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+.brand h2 {
+
+    display: inline-block;
+
+    margin-top: 10px;
+
+    padding: 5px 55px;
+
+    font-size: clamp(1.3rem, 3vw, 2rem);
+
+    letter-spacing: 13px;
+
+    font-weight: 500;
+
+    color: white;
+
+    border-top: 2px solid #00cfff;
+    border-bottom: 2px solid #00cfff;
+
+    text-shadow:
+        0 0 10px #00bfff;
+}
+
+
+/* =========================
+   TAGLINE
+========================= */
+
+.tagline {
+
+    position: relative;
+    z-index: 2;
+
+    margin-top: 20px;
+
+    font-size: clamp(.85rem, 2vw, 1.2rem);
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    color: #d8f5ff;
+
+    text-align: center;
+
+    text-shadow: 0 0 10px rgba(0,200,255,.5);
+}
+
+
+/* =========================
+   SERVICES
+========================= */
+
+.services {
+
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    max-width: 1050px;
+
+    margin-top: 35px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(6, 1fr);
+
+    gap: 18px;
+}
+
+
+.service {
+
+    text-align: center;
+
+    transition: .3s;
+}
+
+.service:hover {
+    transform: translateY(-8px);
+}
+
+
+.icon {
+
+    width: 70px;
+    height: 70px;
+
+    margin: auto;
+
+    border-radius: 50%;
+
+    border: 2px solid #00cfff;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 30px;
+
+    background: rgba(0, 80, 140, .18);
+
+    box-shadow:
+        0 0 12px rgba(0,200,255,.5),
+        inset 0 0 15px rgba(0,150,255,.2);
+
+    transition: .3s;
+}
+
+.service:hover .icon {
+
+    background: rgba(0, 200, 255, .15);
+
+    box-shadow:
+        0 0 20px #00d9ff,
+        0 0 40px rgba(0,200,255,.5);
+}
+
+
+.service p {
+
+    margin-top: 10px;
+
+    font-size: .85rem;
+
+    line-height: 1.3;
+
+    color: #e2f7ff;
+}
+
+
+/* =========================
+   WELCOME BUTTON
+========================= */
+
+.welcome-btn {
+
+    position: relative;
+    z-index: 2;
+
+    margin-top: 35px;
+
+    width: 350px;
+    max-width: 90%;
+
+    padding: 16px 30px;
+
+    border-radius: 50px;
+
+    text-decoration: none;
+
+    text-align: center;
+
+    font-size: 1.3rem;
+
+    font-weight: 800;
+
+    color: #001322;
+
+    background:
+        linear-gradient(
+            90deg,
+            #00eaff,
+            #00aaff,
+            #00eaff
+        );
+
+    box-shadow:
+        0 0 15px #00d9ff,
+        0 0 40px rgba(0,200,255,.5);
+
+    transition: .3s;
+}
+
+
+.welcome-btn:hover {
+
+    transform: scale(1.06);
+
+    box-shadow:
+        0 0 25px #00eaff,
+        0 0 60px rgba(0,200,255,.8);
+}
+
+
+.welcome-btn span {
+    margin-left: 25px;
+    font-size: 1.5rem;
+}
+
+
+/* =========================
+   OWNER SECTION
+========================= */
+
+.owner {
+
+    position: relative;
+    z-index: 2;
+
+    margin-top: 45px;
+
+    text-align: center;
+}
+
+
+.profile-ring {
+
+    width: 190px;
+    height: 190px;
+
+    padding: 7px;
+
+    margin: auto;
+
+    border-radius: 50%;
+
+    border: 2px solid #00d9ff;
+
+    box-shadow:
+        0 0 15px #00d9ff,
+        0 0 45px rgba(0,200,255,.5);
+
+    background: #031d35;
+}
+
+
+.profile-ring img {
+
+    width: 100%;
+    height: 100%;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    object-position: center top;
+
+    background: white;
+}
+
+
+.owner h3 {
+
+    margin-top: 12px;
+
+    font-size: 1.6rem;
+
+    color: white;
+
+    text-shadow:
+        0 0 10px #00bfff;
+}
+
+
+.owner p {
+
+    margin-top: 3px;
+
+    color: #00d9ff;
+
+    letter-spacing: 2px;
+
+    font-size: .9rem;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================
+   BOTTOM CONTACT
+========================= */
+
+.contact-bar {
+
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    max-width: 1150px;
+
+    margin-top: 35px;
+
+    padding: 15px 25px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    border-radius: 30px 30px 0 0;
+
+    background: rgba(0, 13, 30, .8);
+
+    border-top: 1px solid rgba(0,200,255,.3);
+
+    box-shadow:
+        0 -5px 30px rgba(0,150,255,.1);
+
+    color: #e5f9ff;
+}
+
+
+.contact-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    font-size: .95rem;
+}
+
+
+.contact-icon {
+
+    color: #00d9ff;
+
+    font-size: 1.4rem;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width: 900px) {
+
+    .services {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+}
+
+
+@media(max-width: 600px) {
+
+    .hero {
+        padding-top: 25px;
+    }
+
+    .logo-box {
+        width: 115px;
+        height: 115px;
+    }
+
+    .logo-box img {
+        width: 95px;
+        height: 95px;
+    }
+
+    .brand h1 {
+        font-size: 3.1rem;
+        letter-spacing: 2px;
+    }
+
+    .brand h2 {
+        padding: 4px 20px;
+        letter-spacing: 6px;
+        font-size: 1rem;
+    }
+
+    .tagline {
+        font-size: .72rem;
+        letter-spacing: 1.5px;
+    }
+
+    .services {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 25px 10px;
+    }
+
+    .profile-ring {
+        width: 150px;
+        height: 150px;
+    }
+
+    .contact-bar {
+
+        flex-direction: column;
+
+        gap: 10px;
+
+        text-align: center;
+    }
+
+}
+
+
+</style>
 </head>
+
+
 <body>
 
-    <!-- Professional First Page Layout -->
-    <div class="welcome-screen">
-        <!-- Top Logo -->
-        <img src="logo.png" alt="Techfix Solutions Logo" class="top-logo" onerror="this.style.display='none'">
 
-        <!-- Title & Tagline -->
-        <h1 class="brand-title">Techfix Solutions</h1>
-        <p class="brand-tagline">Complete IT & Technical Solutions Under One Roof</p>
+<section class="hero">
 
-        <!-- Only Welcome Button -->
-        <a href="about.html" class="welcome-btn">Welcome</a>
 
-        <!-- Profile Photo Section Below Welcome -->
-        <div class="profile-container">
-            <img src="profile.jpg" alt="Mohd Shahrukh" class="profile-img">
-            <p class="owner-title">Mohd Shahrukh</p>
-            <p class="owner-sub">Proprietor & IT Specialist</p>
-        </div>
+<!-- Animated particles -->
+
+<div class="particle p1"></div>
+<div class="particle p2"></div>
+<div class="particle p3"></div>
+<div class="particle p4"></div>
+<div class="particle p5"></div>
+<div class="particle p6"></div>
+
+
+<!-- ================= LOGO ================= -->
+
+<div class="logo-box">
+
+    <img src="logo.png"
+         alt="TechFix Solutions Logo">
+
+</div>
+
+
+<!-- ================= BRAND ================= -->
+
+<div class="brand">
+
+    <h1>
+        <span>Tech</span>Fix
+    </h1>
+
+    <h2>
+        SOLUTIONS
+    </h2>
+
+</div>
+
+
+<!-- ================= TAGLINE ================= -->
+
+<p class="tagline">
+
+    Complete IT & Technical Solutions Under One Roof
+
+</p>
+
+
+<!-- ================= SERVICES ================= -->
+
+<div class="services">
+
+
+    <div class="service">
+
+        <div class="icon">💻</div>
+
+        <p>
+            Computer<br>
+            Repair
+        </p>
+
     </div>
 
-    <footer>
-        <p>&copy; 2026 Techfix Solutions | Bareilly, Uttar Pradesh</p>
-    </footer>
+
+    <div class="service">
+
+        <div class="icon">🖨️</div>
+
+        <p>
+            Printer &<br>
+            Networking
+        </p>
+
+    </div>
+
+
+    <div class="service">
+
+        <div class="icon">⚙️</div>
+
+        <p>
+            AMC &<br>
+            IT Support
+        </p>
+
+    </div>
+
+
+    <div class="service">
+
+        <div class="icon">💻</div>
+
+        <p>
+            Software<br>
+            Solutions
+        </p>
+
+    </div>
+
+
+    <div class="service">
+
+        <div class="icon">📹</div>
+
+        <p>
+            CCTV<br>
+            Installation
+        </p>
+
+    </div>
+
+
+    <div class="service">
+
+        <div class="icon">📊</div>
+
+        <p>
+            Data &<br>
+            Digital Services
+        </p>
+
+    </div>
+
+
+</div>
+
+
+<!-- ================= WELCOME ================= -->
+
+<a href="about.html" class="welcome-btn">
+
+    Welcome
+
+    <span>→</span>
+
+</a>
+
+
+<!-- ================= OWNER ================= -->
+
+<div class="owner">
+
+    <div class="profile-ring">
+
+        <img src="profile.jpg"
+             alt="Mohd Shahrukh">
+
+    </div>
+
+
+    <h3>
+        Mohd Shahrukh
+    </h3>
+
+
+    <p>
+        Proprietor & IT Specialist
+    </p>
+
+</div>
+
+
+<!-- ================= CONTACT ================= -->
+
+<div class="contact-bar">
+
+
+    <div class="contact-item">
+
+        <span class="contact-icon">☎</span>
+
+        <span>
+            +91 8859505384
+        </span>
+
+    </div>
+
+
+    <div class="contact-item">
+
+        <span class="contact-icon">📍</span>
+
+        <span>
+            Bareilly, Uttar Pradesh
+        </span>
+
+    </div>
+
+
+</div>
+
+
+</section>
+
 
 </body>
 </html>
