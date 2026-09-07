@@ -310,6 +310,101 @@ body {
         margin-top: 45px;
     }
 }
+/* ... Baki sabhi CSS styles ... */
+
+
+    /* =========================================
+       ENHANCED SERVICES SECTION (UPDATED FIX)
+    ========================================= */
+    .services {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        max-width: 1250px;
+        margin: 40px auto 0 auto;
+        padding: 10px;
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: center !important;
+        align-items: stretch !important;
+        flex-wrap: nowrap !important;
+        gap: 12px !important;
+    }
+
+    .services .service {
+        position: relative !important;
+        left: auto !important;
+        right: auto !important;
+        top: auto !important;
+        flex: 1 1 0 !important;
+        min-width: 0 !important;
+        text-align: center;
+        padding: 15px 8px;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(0, 207, 255, 0.15);
+        backdrop-filter: blur(8px);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        cursor: pointer;
+    }
+
+    .services .service:hover {
+        transform: translateY(-8px);
+        background: rgba(0, 207, 255, 0.08);
+        border-color: #00cfff;
+        box-shadow: 0 8px 25px rgba(0, 207, 255, 0.25);
+    }
+
+    .services .service .icon {
+        width: 50px;
+        height: 50px;
+        margin: 0 auto 10px auto;
+        border-radius: 50%;
+        border: 2px solid #00cfff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+        background: rgba(0, 80, 140, 0.25);
+        box-shadow: 0 0 12px rgba(0, 200, 255, 0.4);
+        transition: all 0.3s ease;
+    }
+
+    .services .service:hover .icon {
+        box-shadow: 0 0 20px #00cfff;
+        transform: scale(1.08);
+    }
+
+    .services .service p {
+        margin: 0;
+        font-size: 0.75rem;
+        font-weight: 500;
+        line-height: 1.25;
+        color: #e2f7ff;
+        letter-spacing: 0.3px;
+    }
+
+/* =========================
+   TOP TEXT STYLING
+========================= */
+
+.tagline-top {
+    display: block;
+    font-size: 1.1rem;          /* Thoda bada aur clear size */
+    font-weight: 700;
+    color: #00cfff;              /* Neon Cyan Color */
+    letter-spacing: 2px;         /* Spacing for modern look */
+    text-transform: uppercase;   
+    margin-bottom: 6px;
+    text-shadow: 0 0 12px rgba(0, 207, 255, 0.6); /* Cyan Glow Effect */
+}
+
+</style> <!-- ISS TAG KE JUST UPER PASTE KARNA HAI -->
+
+</section>
+</body>
+</html>
+
 </style>
 </head>
 
@@ -336,6 +431,7 @@ body {
 </div>
 
 <div class="main-content-block">
+    
 
     <p class="tagline">Complete IT & Technical Solutions Under One Roof</p>
 
@@ -372,6 +468,25 @@ body {
             <div class="icon">🌐</div>
             <p>Web<br>Design</p>
         </div>
+      <!-- Aadhaar IT Specialist Card -->
+<!-- Aadhaar IT Specialist Card (Direct SVG Logo) -->
+<div class="service">
+    <div class="icon" style="background: rgba(255, 255, 255, 0.05); border-color: #ff9933;">
+        <svg viewBox="0 0 100 80" width="30" height="30">
+            <!-- Sun Rays (Yellow/Orange) -->
+            <path d="M50 10 L56 22 L68 15 L68 28 L82 28 L76 40 L88 47 L78 54 L86 66 L72 66 L74 80 H26 L28 66 L14 66 L22 54 L12 47 L24 40 L18 28 L32 28 L32 15 L44 22 Z" fill="#F9A825"/>
+            <!-- Fingerprint Body (Red) -->
+            <path d="M50 25 C35 25 25 35 25 50 C25 62 30 72 38 80 H62 C70 72 75 62 75 50 C75 35 65 25 50 25 Z" fill="#E53935"/>
+            <path d="M50 33 C40 33 32 40 32 50 C32 60 36 68 42 75 H58 C64 68 68 60 68 50 C68 40 60 33 50 33 Z" fill="#F9A825"/>
+            <path d="M50 40 C44 40 38 44 38 50 C38 56 41 62 45 66 H55 C59 62 62 56 62 50 C62 44 56 40 50 40 Z" fill="#E53935"/>
+            <circle cx="50" cy="50" r="5" fill="#F9A825"/>
+        </svg>
+    </div>
+    <p>Aadhaar IT Specialist</p>
+</div>
+
+</div>
+</div>
     </div>
 
     <a href="about.html" class="welcome-btn">
@@ -379,6 +494,11 @@ body {
     </a>
 
 </div>
+
+
+
+
+
 
 </section>
 
