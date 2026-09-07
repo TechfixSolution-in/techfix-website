@@ -32,12 +32,12 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start; 
-    padding: 25px 20px 50px 20px; 
+    justify-content: center; 
+    padding: 20px; 
     background:
-        radial-gradient(circle at 50% 30%, #064b85 0%, transparent 42%),
-        radial-gradient(circle at 10% 60%, #003d70 0%, transparent 30%),
-        radial-gradient(circle at 90% 65%, #003d70 0%, transparent 30%),
+        radial-gradient(circle at 50% 50%, #064b85 0%, transparent 50%),
+        radial-gradient(circle at 10% 60%, #003d70 0%, transparent 35%),
+        radial-gradient(circle at 90% 65%, #003d70 0%, transparent 35%),
         linear-gradient(135deg, #020b18, #031d35, #00111f);
 }
 
@@ -94,21 +94,19 @@ body {
 }
 
 /* =========================
-   HEADER (TOP LEFT LOGO)
+   TOP NAV (ABSOLUTE)
 ========================= */
 .top-nav {
-    position: relative;
-    z-index: 2;
-    width: 100%;
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    z-index: 10;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
     gap: 15px;
-    padding: 10px 10px;
 }
 
 .logo-ring {
-    position: relative;
     width: 85px;
     height: 85px;
     border-radius: 50%;
@@ -133,12 +131,8 @@ body {
     display: block;
 }
 
-.brand-text {
-    text-align: left;
-}
-
 .brand-text h1 {
-    font-size: clamp(1.8rem, 3.5vw, 3rem);
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
     font-weight: 900;
     letter-spacing: 2px;
     line-height: 1;
@@ -158,7 +152,7 @@ body {
     display: inline-block;
     margin-top: 3px;
     padding: 2px 10px;
-    font-size: clamp(0.75rem, 1.5vw, 1rem);
+    font-size: clamp(0.75rem, 1.5vw, 0.95rem);
     letter-spacing: 4px;
     font-weight: 500;
     color: #e2f7ff;
@@ -168,21 +162,22 @@ body {
 }
 
 /* ===================================================
-   MAIN CONTENT BLOCK (THODA AUR NICHE SHIFT KIYA)
+   MAIN CONTENT BLOCK
 ====================================================== */
 .main-content-block {
     position: relative;
     z-index: 2;
     width: 100%;
+    max-width: 1280px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 100px; /* Top se spacing badhai taaki poora block neeche aaye */
+    transform: translateY(2vh); 
 }
 
 /* TAGLINE */
 .tagline {
-    font-size: clamp(.85rem, 2vw, 1.25rem);
+    font-size: clamp(0.9rem, 2vw, 1.3rem);
     letter-spacing: 3px;
     text-transform: uppercase;
     color: #d8f5ff;
@@ -190,15 +185,13 @@ body {
     text-shadow: 0 0 10px rgba(0,200,255,.5);
 }
 
-/* ICONS SECTION - 8 COLUMNS & LESS GAP */
+/* SERVICES */
 .services {
     width: 100%;
-    max-width: 1200px;
-    margin-top: 70px;
+    margin-top: 6vh;
     display: grid;
-    /* Desktop par 8 icons ke liye 8 equal columns */
     grid-template-columns: repeat(8, 1fr); 
-    gap: 12px; /* Gap kam kar diya taaki 8th icon fit aa sake */
+    gap: 15px;
 }
 
 .service {
@@ -211,8 +204,8 @@ body {
 }
 
 .icon {
-    width: 70px;
-    height: 70px;
+    width: 72px;
+    height: 72px;
     margin: auto;
     border-radius: 50%;
     border: 2px solid #00cfff;
@@ -235,16 +228,16 @@ body {
 }
 
 .service p {
-    margin-top: 10px;
-    font-size: .82rem;
-    line-height: 1.3;
+    margin-top: 12px;
+    font-size: 0.85rem;
+    line-height: 1.35;
     color: #e2f7ff;
 }
 
-/* WELCOME BUTTON - THODA AUR NICHE SHIFT */
+/* WELCOME BUTTON - BADHAYA HUA NICHE SHIFT GAP */
 .welcome-btn {
-    margin-top: 85px; /* Button ko thoda aur neeche push kiya */
-    width: 360px;
+    margin-top: 12vh; /* Button ko icons se kafi niche push karega */
+    width: 380px;
     max-width: 90%;
     padding: 16px 30px;
     border-radius: 50px;
@@ -253,13 +246,7 @@ body {
     font-size: 1.35rem;
     font-weight: 800;
     color: #001322;
-    background:
-        linear-gradient(
-            90deg,
-            #00eaff,
-            #00aaff,
-            #00eaff
-        );
+    background: linear-gradient(90deg, #00eaff, #00aaff, #00eaff);
     box-shadow:
         0 0 20px #00d9ff,
         0 0 45px rgba(0,200,255,.6);
@@ -279,33 +266,48 @@ body {
 }
 
 /* =========================
-   RESPONSIVE (MOBILE VIEW)
+   RESPONSIVE DESIGN
 ========================= */
-@media(max-width: 900px) {
+@media(max-width: 1024px) {
+    .top-nav {
+        position: relative;
+        top: 0;
+        left: 0;
+        margin-bottom: 20px;
+    }
+    
+    .hero {
+        justify-content: flex-start;
+        padding-top: 20px;
+    }
+
+    .main-content-block {
+        transform: none;
+    }
+
     .services {
-        grid-template-columns: repeat(4, 1fr); /* Tablet par 4x2 grid */
-        gap: 20px 10px;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 25px 15px;
+    }
+    
+    .welcome-btn {
+        margin-top: 60px;
     }
 }
 
 @media(max-width: 600px) {
     .logo-ring {
-        width: 70px;
-        height: 70px;
-    }
-    
-    .main-content-block {
-        margin-top: 40px;
+        width: 65px;
+        height: 65px;
     }
 
     .services {
-        grid-template-columns: repeat(2, 1fr); /* Mobile par 2x4 grid */
-        gap: 25px 10px;
-        margin-top: 40px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px 10px;
     }
 
     .welcome-btn {
-        margin-top: 50px;
+        margin-top: 45px;
     }
 }
 </style>
@@ -315,7 +317,6 @@ body {
 
 <section class="hero">
 
-<!-- Background Particles -->
 <div class="particle p1"></div>
 <div class="particle p2"></div>
 <div class="particle p3"></div>
@@ -323,7 +324,6 @@ body {
 <div class="particle p5"></div>
 <div class="particle p6"></div>
 
-<!-- TOP HEADER -->
 <div class="top-nav">
     <div class="logo-ring">
         <img src="Logo.png" alt="TechFix Solutions Logo">
@@ -335,13 +335,10 @@ body {
     </div>
 </div>
 
-<!-- MAIN CONTENT BLOCK -->
 <div class="main-content-block">
 
-    <!-- TAGLINE -->
     <p class="tagline">Complete IT & Technical Solutions Under One Roof</p>
 
-    <!-- SERVICES (NOW 8 ICONS FIT EASILY) -->
     <div class="services">
         <div class="service">
             <div class="icon">💻</div>
@@ -371,14 +368,12 @@ body {
             <div class="icon">📈</div>
             <p>Excel<br>Specialist</p>
         </div>
-        <!-- NEW 8TH SERVICE ADDED -->
         <div class="service">
             <div class="icon">🌐</div>
             <p>Web<br>Design</p>
         </div>
     </div>
 
-    <!-- WELCOME BUTTON -->
     <a href="about.html" class="welcome-btn">
         Welcome <span>→</span>
     </a>
