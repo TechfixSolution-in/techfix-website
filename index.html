@@ -1,506 +1,443 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TechFix Solutions | IT Services</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechFix Solutions | IT Services</title>
 
-<style>
-/* =========================
-   BASIC RESET
-========================= */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+    <style>
+        /* =========================
+           BASIC RESET & SMOOTH SCROLL
+        ========================= */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-body {
-    font-family: "Segoe UI", Arial, sans-serif;
-    background: #020b18;
-    color: white;
-    overflow-x: hidden;
-}
+        html {
+            scroll-behavior: smooth;
+        }
 
-/* =========================
-   MAIN HERO
-========================= */
-.hero {
-    min-height: 100vh;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center; 
-    padding: 20px; 
-    background:
-        radial-gradient(circle at 50% 50%, #064b85 0%, transparent 50%),
-        radial-gradient(circle at 10% 60%, #003d70 0%, transparent 35%),
-        radial-gradient(circle at 90% 65%, #003d70 0%, transparent 35%),
-        linear-gradient(135deg, #020b18, #031d35, #00111f);
-}
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: #020b18;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
 
-/* =========================
-   ANIMATED TECH GRID
-========================= */
-.hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image:
-        linear-gradient(rgba(0, 174, 255, 0.08) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 174, 255, 0.08) 1px, transparent 1px);
-    background-size: 45px 45px;
-    mask-image: linear-gradient(
-        to bottom,
-        black,
-        transparent 85%
-    );
-    pointer-events: none;
-}
+        /* =========================
+           MAIN HERO SECTION
+        ========================= */
+        .hero {
+            min-height: 100vh;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center; 
+            padding: 40px 20px; 
+            background:
+                radial-gradient(circle at 50% 50%, #064b85 0%, transparent 50%),
+                radial-gradient(circle at 10% 60%, #003d70 0%, transparent 35%),
+                radial-gradient(circle at 90% 65%, #003d70 0%, transparent 35%),
+                linear-gradient(135deg, #020b18, #031d35, #00111f);
+        }
 
-/* =========================
-   GLOWING PARTICLES
-========================= */
-.particle {
-    position: absolute;
-    width: 4px;
-    height: 4px;
-    background: #00d9ff;
-    border-radius: 50%;
-    box-shadow:
-        0 0 8px #00d9ff,
-        0 0 20px #008cff;
-    animation: float 5s infinite ease-in-out;
-}
+        /* Animated Tech Grid Overlay */
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(0, 174, 255, 0.08) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 174, 255, 0.08) 1px, transparent 1px);
+            background-size: 45px 45px;
+            mask-image: linear-gradient(to bottom, black, transparent 85%);
+            -webkit-mask-image: linear-gradient(to bottom, black, transparent 85%);
+            pointer-events: none;
+        }
 
-.p1 { left: 8%; top: 25%; }
-.p2 { left: 18%; top: 45%; animation-delay: 1s; }
-.p3 { left: 85%; top: 28%; animation-delay: 2s; }
-.p4 { left: 92%; top: 50%; animation-delay: 3s; }
-.p5 { left: 12%; top: 75%; animation-delay: 1.5s; }
-.p6 { left: 80%; top: 72%; animation-delay: 2.5s; }
+        /* =========================
+           GLOWING PARTICLES
+        ========================= */
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #00d9ff;
+            border-radius: 50%;
+            box-shadow: 0 0 8px #00d9ff, 0 0 20px #008cff;
+            animation: float 5s infinite ease-in-out;
+        }
 
-@keyframes float {
-    0%,100% {
-        transform: translateY(0);
-        opacity: .5;
-    }
-    50% {
-        transform: translateY(-30px);
-        opacity: 1;
-    }
-}
+        .p1 { left: 8%; top: 25%; }
+        .p2 { left: 18%; top: 45%; animation-delay: 1s; }
+        .p3 { left: 85%; top: 28%; animation-delay: 2s; }
+        .p4 { left: 92%; top: 50%; animation-delay: 3s; }
+        .p5 { left: 12%; top: 75%; animation-delay: 1.5s; }
+        .p6 { left: 80%; top: 72%; animation-delay: 2.5s; }
 
-/* =========================
-   TOP NAV (ABSOLUTE)
-========================= */
-.top-nav {
-    position: absolute;
-    top: 25px;
-    left: 25px;
-    z-index: 10;
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+                opacity: 0.5;
+            }
+            50% {
+                transform: translateY(-30px);
+                opacity: 1;
+            }
+        }
 
-.logo-ring {
-    width: 85px;
-    height: 85px;
-    border-radius: 50%;
-    background: rgba(3, 29, 53, 0.8);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 3px solid #00d9ff;
-    padding: 5px;
-    box-shadow:
-        0 0 15px #00d9ff,
-        0 0 30px rgba(0, 217, 255, .7),
-        inset 0 0 15px rgba(0, 140, 255, .4);
-    flex-shrink: 0;
-}
+        /* =========================
+           TOP NAV & BRANDING LOGO
+        ========================= */
+        .top-nav {
+            position: absolute;
+            top: 25px;
+            left: 25px;
+            z-index: 10;
+        }
 
-.logo-ring img {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    object-fit: cover;
-    display: block;
-}
+        /* Clickable Home Link Wrapper - Complete Lift Effect */
+        .brand-link {
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            
+            /* Pura brand section lift hone ke liye smooth transition */
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
 
-.brand-text h1 {
-    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-    font-weight: 900;
-    letter-spacing: 2px;
-    line-height: 1;
-    background: linear-gradient(180deg, #ffffff 10%, #d7eaff 40%, #00cfff 75%, #007cff 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 0 0 20px rgba(0, 195, 255, .5);
-}
+        /* Jab kisi bhi jagah (Logo ya Text) cursor jaye -> Pura BRAND LIFT HO */
+        .brand-link:hover {
+            transform: translateY(-6px);
+        }
 
-.brand-text h1 span {
-    background: linear-gradient(180deg, #ffffff, #00eaff 55%, #008cff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
+        /* Logo Ring Style */
+        .logo-ring {
+            width: 85px;
+            height: 85px;
+            border-radius: 50%;
+            background: rgba(3, 29, 53, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 3px solid #00d9ff;
+            padding: 5px;
+            box-shadow: 0 0 15px #00d9ff, 0 0 30px rgba(0, 217, 255, 0.7), inset 0 0 15px rgba(0, 140, 255, 0.4);
+            flex-shrink: 0;
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
 
-.brand-text h2 {
-    display: inline-block;
-    margin-top: 3px;
-    padding: 2px 10px;
-    font-size: clamp(0.75rem, 1.5vw, 0.95rem);
-    letter-spacing: 4px;
-    font-weight: 500;
-    color: #e2f7ff;
-    border-top: 2px solid #00cfff;
-    border-bottom: 2px solid #00cfff;
-    text-shadow: 0 0 10px #00bfff;
-}
+        .logo-ring img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            display: block;
+        }
 
-/* ===================================================
-   MAIN CONTENT BLOCK
-====================================================== */
-.main-content-block {
-    position: relative;
-    z-index: 2;
-    width: 100%;
-    max-width: 1280px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transform: translateY(2vh); 
-}
+        /* Hover par Logo halka sa scale & extra glow hoga */
+        .brand-link:hover .logo-ring {
+            transform: scale(1.04);
+            box-shadow: 0 10px 25px #00d9ff, 0 0 45px rgba(0, 217, 255, 0.9), inset 0 0 20px rgba(0, 140, 255, 0.6);
+        }
 
-/* TAGLINE */
-.tagline {
-    font-size: clamp(0.9rem, 2vw, 1.3rem);
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: #d8f5ff;
-    text-align: center;
-    text-shadow: 0 0 10px rgba(0,200,255,.5);
-}
+        /* Brand Text Styling */
+        .brand-text h1 {
+            font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+            font-weight: 900;
+            letter-spacing: 2px;
+            line-height: 1;
+            background: linear-gradient(180deg, #ffffff 10%, #d7eaff 40%, #00cfff 75%, #007cff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 20px rgba(0, 195, 255, 0.5);
+            transition: text-shadow 0.3s ease;
+        }
 
-/* SERVICES */
-.services {
-    width: 100%;
-    margin-top: 6vh;
-    display: grid;
-    grid-template-columns: repeat(8, 1fr); 
-    gap: 15px;
-}
+        .brand-link:hover .brand-text h1 {
+            text-shadow: 0 0 30px rgba(0, 217, 255, 0.9);
+        }
 
-.service {
-    text-align: center;
-    transition: .3s;
-}
+        .brand-text h1 span {
+            background: linear-gradient(180deg, #ffffff, #00eaff 55%, #008cff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-.service:hover {
-    transform: translateY(-8px);
-}
+        .brand-text h2 {
+            display: inline-block;
+            margin-top: 3px;
+            padding: 2px 10px;
+            font-size: clamp(0.75rem, 1.5vw, 0.95rem);
+            letter-spacing: 4px;
+            font-weight: 500;
+            color: #e2f7ff;
+            border-top: 2px solid #00cfff;
+            border-bottom: 2px solid #00cfff;
+            text-shadow: 0 0 10px #00bfff;
+        }
 
-.icon {
-    width: 72px;
-    height: 72px;
-    margin: auto;
-    border-radius: 50%;
-    border: 2px solid #00cfff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 30px;
-    background: rgba(0, 80, 140, .2);
-    box-shadow:
-        0 0 15px rgba(0,200,255,.5),
-        inset 0 0 15px rgba(0,150,255,.25);
-    transition: .3s;
-}
+        /* =========================
+           MAIN CONTENT BLOCK
+        ========================= */
+        .main-content-block {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 1350px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 60px;
+        }
 
-.service:hover .icon {
-    background: rgba(0, 200, 255, .2);
-    box-shadow:
-        0 0 25px #00d9ff,
-        0 0 45px rgba(0,200,255,.6);
-}
+        .welcome-btn {
+            width: 380px;
+            max-width: 90%;
+            padding: 16px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            text-align: center;
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: #001322;
+            background: linear-gradient(90deg, #00eaff, #00aaff, #00eaff);
+            box-shadow: 0 0 20px #00d9ff, 0 0 45px rgba(0, 200, 255, 0.6);
+            transition: all 0.3s ease;
+        }
 
-.service p {
-    margin-top: 12px;
-    font-size: 0.85rem;
-    line-height: 1.35;
-    color: #e2f7ff;
-}
+        .welcome-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px #00eaff, 0 0 65px rgba(0, 200, 255, 0.85);
+        }
 
-/* WELCOME BUTTON - BADHAYA HUA NICHE SHIFT GAP */
-.welcome-btn {
-    margin-top: 5vh; /* Button ko icons se kafi niche push karega */
-    width: 380px;
-    max-width: 90%;
-    padding: 16px 30px;
-    border-radius: 50px;
-    text-decoration: none;
-    text-align: center;
-    font-size: 1.35rem;
-    font-weight: 800;
-    color: #001322;
-    background: linear-gradient(90deg, #00eaff, #00aaff, #00eaff);
-    box-shadow:
-        0 0 20px #00d9ff,
-        0 0 45px rgba(0,200,255,.6);
-    transition: .3s;
-}
+        .welcome-btn span {
+            margin-left: 15px;
+            font-size: 1.5rem;
+        }
 
-.welcome-btn:hover {
-    transform: scale(1.05);
-    box-shadow:
-        0 0 30px #00eaff,
-        0 0 65px rgba(0,200,255,.85);
-}
+        .tagline {
+            margin-top: 40px;
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #d8f5ff;
+            text-align: center;
+            text-shadow: 0 0 10px rgba(0, 200, 255, 0.5);
+        }
 
-.welcome-btn span {
-    margin-left: 20px;
-    font-size: 1.5rem;
-}
+        /* =========================
+           SERVICES GRID
+        ========================= */
+        .services {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            margin-top: 40px;
+            display: grid;
+            grid-template-columns: repeat(9, 1fr);
+            gap: 12px;
+            padding: 10px;
+        }
 
-/* =========================
-   RESPONSIVE DESIGN
-========================= */
-@media(max-width: 1024px) {
-    .top-nav {
-        position: relative;
-        top: 0;
-        left: 0;
-        margin-bottom: 20px;
-    }
-    
-    .hero {
-        justify-content: flex-start;
-        padding-top: 20px;
-    }
+        .service {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(0, 207, 255, 0.15);
+            backdrop-filter: blur(8px);
+            border-radius: 12px;
+            padding: 18px 8px;
+            text-align: center;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
 
-    .main-content-block {
-        transform: none;
-    }
+        .service:hover {
+            transform: translateY(-8px);
+            background: rgba(0, 207, 255, 0.08);
+            border-color: #00cfff;
+            box-shadow: 0 8px 25px rgba(0, 207, 255, 0.25);
+        }
 
-    .services {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 25px 15px;
-    }
-    
-    .welcome-btn {
-        margin-top: 60px;
-    }
-}
+        .service .icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            border: 2px solid #00cfff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 22px;
+            background: rgba(0, 80, 140, 0.25);
+            box-shadow: 0 0 12px rgba(0, 200, 255, 0.4);
+            margin-bottom: 12px;
+            transition: all 0.3s ease;
+        }
 
-@media(max-width: 600px) {
-    .logo-ring {
-        width: 65px;
-        height: 65px;
-    }
+        .service:hover .icon {
+            box-shadow: 0 0 20px #00cfff;
+            transform: scale(1.08);
+        }
 
-    .services {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px 10px;
-    }
+        .service p {
+            margin: 0;
+            font-size: 0.78rem;
+            font-weight: 500;
+            line-height: 1.3;
+            color: #e2f7ff;
+            letter-spacing: 0.3px;
+        }
 
-    .welcome-btn {
-        margin-top: 45px;
-    }
-}
-/* ... Baki sabhi CSS styles ... */
+        .service .icon-aadhaar {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: #ff9933;
+        }
 
+        /* =========================
+           RESPONSIVE BREAKPOINTS
+        ========================= */
+        @media (max-width: 1200px) {
+            .services {
+                grid-template-columns: repeat(5, 1fr);
+                gap: 15px;
+            }
+        }
 
-    /* =========================================
-       ENHANCED SERVICES SECTION (UPDATED FIX)
-    ========================================= */
-    .services {
-        position: relative;
-        z-index: 2;
-        width: 100%;
-        max-width: 1250px;
-        margin: 40px auto 0 auto;
-        padding: 10px;
-        display: flex !important;
-        flex-direction: row !important;
-        justify-content: center !important;
-        align-items: stretch !important;
-        flex-wrap: nowrap !important;
-        gap: 12px !important;
-    }
+        @media (max-width: 850px) {
+            .top-nav {
+                position: relative;
+                top: 0;
+                left: 0;
+                margin-bottom: 20px;
+            }
+            .hero {
+                justify-content: flex-start;
+            }
+            .main-content-block {
+                margin-top: 10px;
+            }
+            .services {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 15px;
+            }
+        }
 
-    .services .service {
-        position: relative !important;
-        left: auto !important;
-        right: auto !important;
-        top: auto !important;
-        flex: 1 1 0 !important;
-        min-width: 0 !important;
-        text-align: center;
-        padding: 15px 8px;
-        border-radius: 12px;
-        background: rgba(255, 255, 255, 0.03);
-        border: 1px solid rgba(0, 207, 255, 0.15);
-        backdrop-filter: blur(8px);
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        cursor: pointer;
-    }
-
-    .services .service:hover {
-        transform: translateY(-8px);
-        background: rgba(0, 207, 255, 0.08);
-        border-color: #00cfff;
-        box-shadow: 0 8px 25px rgba(0, 207, 255, 0.25);
-    }
-
-    .services .service .icon {
-        width: 50px;
-        height: 50px;
-        margin: 0 auto 10px auto;
-        border-radius: 50%;
-        border: 2px solid #00cfff;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 20px;
-        background: rgba(0, 80, 140, 0.25);
-        box-shadow: 0 0 12px rgba(0, 200, 255, 0.4);
-        transition: all 0.3s ease;
-    }
-
-    .services .service:hover .icon {
-        box-shadow: 0 0 20px #00cfff;
-        transform: scale(1.08);
-    }
-
-    .services .service p {
-        margin: 0;
-        font-size: 0.75rem;
-        font-weight: 500;
-        line-height: 1.25;
-        color: #e2f7ff;
-        letter-spacing: 0.3px;
-    }
-
-/* =========================
-   TOP TEXT STYLING
-========================= */
-
-.tagline-top {
-    display: block;
-    font-size: 1.1rem;          /* Thoda bada aur clear size */
-    font-weight: 700;
-    color: #00cfff;              /* Neon Cyan Color */
-    letter-spacing: 2px;         /* Spacing for modern look */
-    text-transform: uppercase;   
-    margin-bottom: 6px;
-    text-shadow: 0 0 12px rgba(0, 207, 255, 0.6); /* Cyan Glow Effect */
-}
-
-</style> <!-- ISS TAG KE JUST UPER PASTE KARNA HAI -->
-
-</section>
-</body>
-</html>
-
-</style>
+        @media (max-width: 550px) {
+            .logo-ring {
+                width: 65px;
+                height: 65px;
+            }
+            .services {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 12px;
+            }
+            .welcome-btn {
+                font-size: 1.1rem;
+                padding: 12px 20px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<section class="hero">
+    <section class="hero" id="home">
+        <!-- Floating Particles -->
+        <div class="particle p1"></div>
+        <div class="particle p2"></div>
+        <div class="particle p3"></div>
+        <div class="particle p4"></div>
+        <div class="particle p5"></div>
+        <div class="particle p6"></div>
 
-<div class="particle p1"></div>
-<div class="particle p2"></div>
-<div class="particle p3"></div>
-<div class="particle p4"></div>
-<div class="particle p5"></div>
-<div class="particle p6"></div>
-
-<div class="top-nav">
-    <div class="logo-ring">
-        <img src="Logo.png" alt="TechFix Solutions Logo">
-    </div>
-    
-    <div class="brand-text">
-        <h1><span>Tech</span>Fix</h1>
-        <h2>SOLUTIONS</h2>
-    </div>
-</div>
-
-<div class="main-content-block">
-    
-
-    <p class="tagline">Complete IT & Technical Solutions Under One Roof</p>
-
-    <div class="services">
-        <div class="service">
-            <div class="icon">💻</div>
-            <p>Computer<br>Repair</p>
+        <!-- Top Navigation / Home Link with Full Lift Effect -->
+        <div class="top-nav">
+            <a href="index.html" class="brand-link" title="Go to Home Page">
+                <div class="logo-ring">
+                    <img src="Logo.png" alt="TechFix Solutions Logo">
+                </div>
+                
+                <div class="brand-text">
+                    <h1><span>Tech</span>Fix</h1>
+                    <h2>SOLUTIONS</h2>
+                </div>
+            </a>
         </div>
-        <div class="service">
-            <div class="icon">🖨️</div>
-            <p>Printer &<br>Networking</p>
+
+        <!-- Main Hero Content -->
+        <div class="main-content-block">
+            <a href="about.html" class="welcome-btn">
+                Welcome <span>→</span>
+            </a>
+
+            <p class="tagline">Complete IT & Technical Solutions Under One Roof</p>
+
+            <!-- Service Cards Grid -->
+            <div class="services">
+                <div class="service">
+                    <div class="icon">💻</div>
+                    <p>Computer<br>Repair</p>
+                </div>
+                <div class="service">
+                    <div class="icon">🖨️</div>
+                    <p>Printer &<br>Networking</p>
+                </div>
+                <div class="service">
+                    <div class="icon">⚙️</div>
+                    <p>AMC &<br>IT Support</p>
+                </div>
+                <div class="service">
+                    <div class="icon">💻</div>
+                    <p>Software<br>Solutions</p>
+                </div>
+                <div class="service">
+                    <div class="icon">📹</div>
+                    <p>CCTV<br>Installation</p>
+                </div>
+                <div class="service">
+                    <div class="icon">📊</div>
+                    <p>Data &<br>Digital Services</p>
+                </div>
+                <div class="service">
+                    <div class="icon">📈</div>
+                    <p>Excel<br>Specialist</p>
+                </div>
+                <div class="service">
+                    <div class="icon">🌐</div>
+                    <p>Web<br>Design</p>
+                </div>
+                <div class="service">
+                    <div class="icon icon-aadhaar">
+                        <svg viewBox="0 0 100 80" width="28" height="28">
+                            <path d="M50 10 L56 22 L68 15 L68 28 L82 28 L76 40 L88 47 L78 54 L86 66 L72 66 L74 80 H26 L28 66 L14 66 L22 54 L12 47 L24 40 L18 28 L32 28 L32 15 L44 22 Z" fill="#F9A825"/>
+                            <path d="M50 25 C35 25 25 35 25 50 C25 62 30 72 38 80 H62 C70 72 75 62 75 50 C75 35 65 25 50 25 Z" fill="#E53935"/>
+                            <path d="M50 33 C40 33 32 40 32 50 C32 60 36 68 42 75 H58 C64 68 68 60 68 50 C68 40 60 33 50 33 Z" fill="#F9A825"/>
+                            <path d="M50 40 C44 40 38 44 38 50 C38 56 41 62 45 66 H55 C59 62 62 56 62 50 C62 44 56 40 50 40 Z" fill="#E53935"/>
+                            <circle cx="50" cy="50" r="5" fill="#F9A825"/>
+                        </svg>
+                    </div>
+                    <p>Aadhaar IT<br>Specialist</p>
+                </div>
+            </div>
         </div>
-        <div class="service">
-            <div class="icon">⚙️</div>
-            <p>AMC &<br>IT Support</p>
-        </div>
-        <div class="service">
-            <div class="icon">💻</div>
-            <p>Software<br>Solutions</p>
-        </div>
-        <div class="service">
-            <div class="icon">📹</div>
-            <p>CCTV<br>Installation</p>
-        </div>
-        <div class="service">
-            <div class="icon">📊</div>
-            <p>Data &<br>Digital Services</p>
-        </div>
-        <div class="service">
-            <div class="icon">📈</div>
-            <p>Excel<br>Specialist</p>
-        </div>
-        <div class="service">
-            <div class="icon">🌐</div>
-            <p>Web<br>Design</p>
-        </div>
-      <!-- Aadhaar IT Specialist Card -->
-<!-- Aadhaar IT Specialist Card (Direct SVG Logo) -->
-<div class="service">
-    <div class="icon" style="background: rgba(255, 255, 255, 0.05); border-color: #ff9933;">
-        <svg viewBox="0 0 100 80" width="30" height="30">
-            <!-- Sun Rays (Yellow/Orange) -->
-            <path d="M50 10 L56 22 L68 15 L68 28 L82 28 L76 40 L88 47 L78 54 L86 66 L72 66 L74 80 H26 L28 66 L14 66 L22 54 L12 47 L24 40 L18 28 L32 28 L32 15 L44 22 Z" fill="#F9A825"/>
-            <!-- Fingerprint Body (Red) -->
-            <path d="M50 25 C35 25 25 35 25 50 C25 62 30 72 38 80 H62 C70 72 75 62 75 50 C75 35 65 25 50 25 Z" fill="#E53935"/>
-            <path d="M50 33 C40 33 32 40 32 50 C32 60 36 68 42 75 H58 C64 68 68 60 68 50 C68 40 60 33 50 33 Z" fill="#F9A825"/>
-            <path d="M50 40 C44 40 38 44 38 50 C38 56 41 62 45 66 H55 C59 62 62 56 62 50 C62 44 56 40 50 40 Z" fill="#E53935"/>
-            <circle cx="50" cy="50" r="5" fill="#F9A825"/>
-        </svg>
-    </div>
-    <p>Aadhaar IT Specialist</p>
-</div>
+    </section>
 
-</div>
-</div>
-    </div>
-
-    <a href="about.html" class="welcome-btn">
-        Welcome <span>→</span>
-    </a>
-
-</div>
-
-
-
-
-
-
-</section>
-
+    <!-- Smooth Scroll Handler -->
+    <script>
+        document.querySelector('.brand-link').addEventListener('click', function(e) {
+            if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || window.location.pathname === '') {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        });
+    </script>
 </body>
 </html>
