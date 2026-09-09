@@ -32,14 +32,25 @@
         .top-banner {
             position: relative;
             width: 100%;
-            min-height: 180px; /* Adjust height based on banner */
-            background: url('Picture1.jpg') no-repeat center center / cover; /* Yahan apni image file ka naam rakhein */
+            min-height: 350px; /* Adjust height based on banner */
+           background: url('Picture1.jpg') no-repeat center / 100% 100%;
             display: flex;
             align-items: center;
             padding: 20px 30px;
             box-shadow: 0 4px 20px rgba(0, 217, 255, 0.2);
             border-bottom: 1px solid rgba(0, 207, 255, 0.3);
-        }
+        
+            /* Content ko vertical top aur horizontal left kone me karne ke liye */
+    align-items: flex-start; 
+    justify-content: flex-start;
+    
+    /* Top aur Left padding kam karein taaki bilkul corner me chala jaye */
+    padding: 09px 15px; 
+    
+    box-shadow: 0 4px 20px rgba(0, 217, 255, 0.2);
+    border-bottom: 1px solid rgba(0, 207, 255, 0.3);
+}
+
 
         /* Dark overlay layer over banner image for text readability */
         .top-banner::before {
@@ -205,40 +216,79 @@
             align-items: center;
         }
 
-        .welcome-btn {
-            width: 380px;
-            max-width: 90%;
-            padding: 16px 30px;
-            border-radius: 50px;
-            text-decoration: none;
-            text-align: center;
-            font-size: 1.35rem;
-            font-weight: 800;
-            color: #001322;
-            background: linear-gradient(90deg, #00eaff, #00aaff, #00eaff);
-            box-shadow: 0 0 20px #00d9ff, 0 0 45px rgba(0, 200, 255, 0.6);
-            transition: all 0.3s ease;
-        }
+       /* Parent Container Adjustments */
+.main-content-block {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    /* Content ko thoda upar shift karne ke liye top margin minus kar sakte hain */
+    margin-top: -15px; 
+}
 
-        .welcome-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 30px #00eaff, 0 0 65px rgba(0, 200, 255, 0.85);
-        }
+.welcome-btn {
+    width: 380px;
+    max-width: 90%;
+    padding: 16px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: #001322;
+    background: linear-gradient(90deg, #00eaff, #00aaff, #00eaff);
+    box-shadow: 0 0 20px #00d9ff, 0 0 45px rgba(0, 200, 255, 0.6);
+    transition: all 0.3s ease;
 
-        .welcome-btn span {
-            margin-left: 15px;
-            font-size: 1.5rem;
-        }
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
 
-        .tagline {
-            margin-top: 40px;
-            font-size: clamp(1rem, 2vw, 1.3rem);
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: #d8f5ff;
-            text-align: center;
-            text-shadow: 0 0 10px rgba(0, 200, 255, 0.5);
-        }
+    /* Isse button pakka upar shift hoga */
+    position: relative;
+    top: -100px; /* Thoda aur upar karne ke liye -35px ya -40px kar sakte hain */
+}
+
+
+.welcome-btn:hover {
+    transform: translateY(-4px) scale(1.03); /* Hover par halka upar move hoga */
+    box-shadow: 0 0 30px #00eaff, 0 0 65px rgba(0, 200, 255, 0.85);
+}
+
+.welcome-btn span {
+    margin-left: 12px;
+    font-size: 1.5rem;
+    display: inline-flex;
+    align-items: center;
+    line-height: 1;
+
+    /* Icon vertical adjustment */
+    transform: translateY(-2px); 
+    transition: transform 0.3s ease;
+}
+
+.welcome-btn:hover span {
+    transform: translate(5px, -2px);
+}
+  .tagline {
+    margin-top: 25px;
+    position: relative;
+    top: -55px; /* Isse text exact 10px upar shift ho jayega */
+    
+font-size: clamp(1rem, 2vw, 1.3rem);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #d8f5ff;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(0, 200, 255, 0.5);
+
+    /* Direct Upar Shift Karne Ke Liye */
+    transform: translateY(-25px) !important;
+}
 
         /* =========================
            SERVICES GRID
@@ -267,6 +317,8 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            /* Is line se ICON aur TEXT DONO ek saath upar shift ho jayenge */
+    transform: translateY(-60px) !important;
         }
 
         .service:hover {
@@ -276,20 +328,27 @@
             box-shadow: 0 8px 25px rgba(0, 207, 255, 0.25);
         }
 
-        .service .icon {
-            width: 52px;
-            height: 52px;
-            border-radius: 50%;
-            border: 2px solid #00cfff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 22px;
-            background: rgba(0, 80, 140, 0.25);
-            box-shadow: 0 0 12px rgba(0, 200, 255, 0.4);
-            margin-bottom: 12px;
-            transition: all 0.3s ease;
-        }
+     .service .icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    border: 2px solid #00cfff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    background: rgba(0, 80, 140, 0.25);
+    box-shadow: 0 0 12px rgba(0, 200, 255, 0.4);
+    
+    /* 1. Icon ko niche se gap dene ke liye margin badhaya */
+    margin-bottom: 16px; 
+    
+    /* 2. Is line se icon exact upar shift ho jayega */
+    transform: translateY(-4px); 
+    
+    transition: all 0.3s ease;
+}
+        
 
         .service:hover .icon {
             box-shadow: 0 0 20px #00cfff;
