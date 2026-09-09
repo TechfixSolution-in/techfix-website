@@ -27,10 +27,114 @@
         }
 
         /* =========================
+           TOP BANNER WITH BACKGROUND
+        ========================= */
+        .top-banner {
+            position: relative;
+            width: 100%;
+            min-height: 180px; /* Adjust height based on banner */
+            background: url('Picture1') no-repeat center center / cover; /* Yahan apni image file ka naam rakhein */
+            display: flex;
+            align-items: center;
+            padding: 20px 30px;
+            box-shadow: 0 4px 20px rgba(0, 217, 255, 0.2);
+            border-bottom: 1px solid rgba(0, 207, 255, 0.3);
+        }
+
+        /* Dark overlay layer over banner image for text readability */
+        .top-banner::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(2, 11, 24, 0.45);
+            z-index: 1;
+        }
+
+        /* Clickable Home Link Wrapper */
+        .brand-link {
+            position: relative;
+            z-index: 2; /* Content image ke upar rahega */
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .brand-link:hover {
+            transform: translateY(-4px);
+        }
+
+        /* Logo Ring Style */
+        .logo-ring {
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            background: rgba(3, 29, 53, 0.85);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 3px solid #00d9ff;
+            padding: 5px;
+            box-shadow: 0 0 15px #00d9ff, 0 0 30px rgba(0, 217, 255, 0.7), inset 0 0 15px rgba(0, 140, 255, 0.4);
+            flex-shrink: 0;
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+
+        .logo-ring img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .brand-link:hover .logo-ring {
+            transform: scale(1.04);
+            box-shadow: 0 10px 25px #00d9ff, 0 0 45px rgba(0, 217, 255, 0.9), inset 0 0 20px rgba(0, 140, 255, 0.6);
+        }
+
+        /* Brand Text Styling */
+        .brand-text h1 {
+            font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+            font-weight: 900;
+            letter-spacing: 2px;
+            line-height: 1;
+            background: linear-gradient(180deg, #ffffff 10%, #d7eaff 40%, #00cfff 75%, #007cff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 20px rgba(0, 195, 255, 0.5);
+            transition: text-shadow 0.3s ease;
+        }
+
+        .brand-link:hover .brand-text h1 {
+            text-shadow: 0 0 30px rgba(0, 217, 255, 0.9);
+        }
+
+        .brand-text h1 span {
+            background: linear-gradient(180deg, #ffffff, #00eaff 55%, #008cff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .brand-text h2 {
+            display: inline-block;
+            margin-top: 3px;
+            padding: 2px 10px;
+            font-size: clamp(0.7rem, 1.2vw, 0.85rem);
+            letter-spacing: 4px;
+            font-weight: 500;
+            color: #e2f7ff;
+            border-top: 2px solid #00cfff;
+            border-bottom: 2px solid #00cfff;
+            text-shadow: 0 0 10px #00bfff;
+        }
+
+        /* =========================
            MAIN HERO SECTION
         ========================= */
         .hero {
-            min-height: 100vh;
+            min-height: calc(100vh - 180px);
             position: relative;
             overflow: hidden;
             display: flex;
@@ -59,9 +163,7 @@
             pointer-events: none;
         }
 
-        /* =========================
-           GLOWING PARTICLES
-        ========================= */
+        /* Floating Particles */
         .particle {
             position: absolute;
             width: 4px;
@@ -91,98 +193,6 @@
         }
 
         /* =========================
-           TOP NAV & BRANDING LOGO
-        ========================= */
-        .top-nav {
-            position: absolute;
-            top: 25px;
-            left: 25px;
-            z-index: 10;
-        }
-
-        /* Clickable Home Link Wrapper - Complete Lift Effect */
-        .brand-link {
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            
-            /* Pura brand section lift hone ke liye smooth transition */
-            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        /* Jab kisi bhi jagah (Logo ya Text) cursor jaye -> Pura BRAND LIFT HO */
-        .brand-link:hover {
-            transform: translateY(-6px);
-        }
-
-        /* Logo Ring Style */
-        .logo-ring {
-            width: 85px;
-            height: 85px;
-            border-radius: 50%;
-            background: rgba(3, 29, 53, 0.8);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border: 3px solid #00d9ff;
-            padding: 5px;
-            box-shadow: 0 0 15px #00d9ff, 0 0 30px rgba(0, 217, 255, 0.7), inset 0 0 15px rgba(0, 140, 255, 0.4);
-            flex-shrink: 0;
-            transition: box-shadow 0.3s ease, transform 0.3s ease;
-        }
-
-        .logo-ring img {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            object-fit: cover;
-            display: block;
-        }
-
-        /* Hover par Logo halka sa scale & extra glow hoga */
-        .brand-link:hover .logo-ring {
-            transform: scale(1.04);
-            box-shadow: 0 10px 25px #00d9ff, 0 0 45px rgba(0, 217, 255, 0.9), inset 0 0 20px rgba(0, 140, 255, 0.6);
-        }
-
-        /* Brand Text Styling */
-        .brand-text h1 {
-            font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-            font-weight: 900;
-            letter-spacing: 2px;
-            line-height: 1;
-            background: linear-gradient(180deg, #ffffff 10%, #d7eaff 40%, #00cfff 75%, #007cff 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 20px rgba(0, 195, 255, 0.5);
-            transition: text-shadow 0.3s ease;
-        }
-
-        .brand-link:hover .brand-text h1 {
-            text-shadow: 0 0 30px rgba(0, 217, 255, 0.9);
-        }
-
-        .brand-text h1 span {
-            background: linear-gradient(180deg, #ffffff, #00eaff 55%, #008cff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .brand-text h2 {
-            display: inline-block;
-            margin-top: 3px;
-            padding: 2px 10px;
-            font-size: clamp(0.75rem, 1.5vw, 0.95rem);
-            letter-spacing: 4px;
-            font-weight: 500;
-            color: #e2f7ff;
-            border-top: 2px solid #00cfff;
-            border-bottom: 2px solid #00cfff;
-            text-shadow: 0 0 10px #00bfff;
-        }
-
-        /* =========================
            MAIN CONTENT BLOCK
         ========================= */
         .main-content-block {
@@ -193,7 +203,6 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-top: 60px;
         }
 
         .welcome-btn {
@@ -312,17 +321,9 @@
         }
 
         @media (max-width: 850px) {
-            .top-nav {
-                position: relative;
-                top: 0;
-                left: 0;
-                margin-bottom: 20px;
-            }
-            .hero {
-                justify-content: flex-start;
-            }
-            .main-content-block {
-                margin-top: 10px;
+            .top-banner {
+                padding: 15px 20px;
+                min-height: 140px;
             }
             .services {
                 grid-template-columns: repeat(3, 1fr);
@@ -332,8 +333,8 @@
 
         @media (max-width: 550px) {
             .logo-ring {
-                width: 65px;
-                height: 65px;
+                width: 60px;
+                height: 60px;
             }
             .services {
                 grid-template-columns: repeat(2, 1fr);
@@ -349,6 +350,21 @@
 
 <body>
 
+    <!-- TOP BANNER WITH OVERLAY LOGO & BRAND NAME -->
+    <header class="top-banner">
+        <a href="index.html" class="brand-link" title="Go to Home Page">
+            <div class="logo-ring">
+                <img src="Logo.png" alt="TechFix Solutions Logo">
+            </div>
+            
+            <div class="brand-text">
+                <h1><span>Tech</span>Fix</h1>
+                <h2>SOLUTIONS</h2>
+            </div>
+        </a>
+    </header>
+
+    <!-- MAIN HERO SECTION -->
     <section class="hero" id="home">
         <!-- Floating Particles -->
         <div class="particle p1"></div>
@@ -358,21 +374,7 @@
         <div class="particle p5"></div>
         <div class="particle p6"></div>
 
-        <!-- Top Navigation / Home Link with Full Lift Effect -->
-        <div class="top-nav">
-            <a href="index.html" class="brand-link" title="Go to Home Page">
-                <div class="logo-ring">
-                    <img src="Logo.png" alt="TechFix Solutions Logo">
-                </div>
-                
-                <div class="brand-text">
-                    <h1><span>Tech</span>Fix</h1>
-                    <h2>SOLUTIONS</h2>
-                </div>
-            </a>
-        </div>
-
-        <!-- Main Hero Content -->
+        <!-- Main Content -->
         <div class="main-content-block">
             <a href="about.html" class="welcome-btn">
                 Welcome <span>→</span>
