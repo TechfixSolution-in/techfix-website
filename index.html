@@ -30,19 +30,23 @@
            TOP BANNER WITH BACKGROUND
         ========================= */
         .top-banner {
-            position: relative;
             width: 100%;
-            min-height: 350px; /* Adjust height based on banner */
-           background: url('Picture1.png') no-repeat center / 100% 100%;
-            display: flex;
-            align-items: center;
-            padding: 20px 30px;
-            box-shadow: 0 4px 20px rgba(0, 217, 255, 0.2);
-            border-bottom: 1px solid rgba(0, 207, 255, 0.3);
-        
-            /* Content ko vertical top aur horizontal left kone me karne ke liye */
-    align-items: flex-start; 
-    justify-content: flex-start;
+            min-height: 300px;
+            background-image: url('Picture1.png');
+            background-size: cover;
+            background-position: center right;
+            background-repeat: no-repeat;
+            filter: none; 
+            opacity: 1;
+        }
+
+        .top-banner .logo {
+            margin-top: 15px;
+            margin-left: 20px;
+            padding: 8px 15px;
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 8px;
+        }
     
     /* Top aur Left padding kam karein taaki bilkul corner me chala jaye */
     padding: 09px 15px; 
