@@ -25,13 +25,14 @@
             color: #ffffff;
             min-height: 100vh;
             overflow-x: hidden;
-            /* Gradient overlay ke sath Background Image */
-            background-image: linear-gradient(rgba(3, 15, 30, 0.75), rgba(3, 15, 30, 0.75)), url('bg-image.jpg');
+            /* Test Image (Aggar local image 'bg-image.jpg' nahi milegi to yeh load hogi) */
+            background-image: linear-gradient(rgba(3, 15, 30, 0.8), rgba(3, 15, 30, 0.8)), 
+                              url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1920&q=80');
             background-repeat: no-repeat;
             background-position: center center;
             background-size: cover;
             background-attachment: fixed;
-            background-color: #020b18; /* Image load hone tak fallback color */
+            background-color: #020b18; 
         }
 
         /* =========================
@@ -39,247 +40,189 @@
         ========================= */
         .top-banner {
             width: 100%;
-            min-height: 250px;
-            background-image: url('Picture1.png');
-            background-size: cover;
-            background-position: center right;
-            background-repeat: no-repeat;
+            padding: 20px 30px;
+            background: rgba(2, 11, 24, 0.6);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 207, 255, 0.2);
             position: relative;
+            z-index: 10;
         }
 
-        .top-banner::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: rgba(2, 11, 24, 0.35);
-            z-index: 1;
-        }
-
-        .top-banner .logo {
-            display: flex;
-            align-items: center;
-            background: transparent !important;
-            padding: 0 !important;
-            margin-top: 15px;
-            margin-left: 20px;
-        }
-
-        .top-banner .logo img {
-            height: 45px;
-            width: auto;
-            object-fit: contain;
-            background: none !important;
-            box-shadow: none !important;
-            border-radius: 0 !important;
-        }
-
-        .top-banner .logo-circle,
-        .top-banner .logo::before {
-            display: none !important;
-        }
-
-        /* Header Brand Link */
         .brand-link {
-            position: relative;
-            z-index: 2;
             text-decoration: none;
             display: flex;
             align-items: center;
             gap: 15px;
-            transition: transform 0.3s ease;
-        }
-
-        .brand-link:hover {
-            transform: translateY(-4px);
         }
 
         .logo-ring {
-            width: 78px;
-            height: 78px;
-            margin-top: 15px;
-            margin-left: 10px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
             background: rgba(3, 29, 53, 0.85);
             display: flex;
             justify-content: center;
             align-items: center;
-            border: 3px solid #00d9ff;
-            padding: 5px;
-            box-shadow: 0 0 15px #00d9ff, 0 0 30px rgba(0, 217, 255, 0.7);
-            flex-shrink: 0;
-            transition: box-shadow 0.3s ease, transform 0.3s ease;
-        }
-
-        .logo-ring img {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            object-fit: cover;
-            display: block;
-        }
-
-        .brand-link:hover .logo-ring {
-            transform: scale(1.04);
-            box-shadow: 0 10px 25px #00d9ff, 0 0 45px rgba(0, 217, 255, 0.9);
+            border: 2px solid #00d9ff;
+            box-shadow: 0 0 15px #00d9ff;
+            font-weight: bold;
+            color: #00d9ff;
         }
 
         .brand-text h1 {
-            font-size: clamp(2rem, 3.5vw, 2.5rem);
+            font-size: 1.8rem;
             font-weight: 900;
-            margin-top: 9px;
-            letter-spacing: 2px;
-            line-height: 1;
-            background: linear-gradient(180deg, #ffffff 10%, #d7eaff 40%, #00cfff 75%, #007cff 100%);
+            background: linear-gradient(180deg, #ffffff, #00cfff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 20px rgba(0, 195, 255, 0.5);
         }
 
         .brand-text h2 {
-            display: inline-block;
-            margin-top: 3px;
-            padding: 2px 10px;
-            font-size: clamp(0.7rem, 1.2vw, 0.85rem);
-            letter-spacing: 4px;
-            font-weight: 500;
+            font-size: 0.75rem;
+            letter-spacing: 3px;
             color: #e2f7ff;
-            border-top: 2px solid #00cfff;
-            border-bottom: 2px solid #00cfff;
-            text-shadow: 0 0 10px #00bfff;
+            border-top: 1px solid #00cfff;
+            border-bottom: 1px solid #00cfff;
+            padding: 2px 5px;
         }
 
         /* =========================
-           HERO SECTION (TRANSPARENT)
+           HERO SECTION
         ========================= */
         .hero {
             position: relative;
-            overflow: hidden;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center; 
-            padding: 60px 20px; 
-            background: transparent !important; /* Screen background dikhne ke liye */
-        }
-
-        .particle {
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            background: #00d9ff;
-            border-radius: 50%;
-            box-shadow: 0 0 8px #00d9ff, 0 0 20px #008cff;
-            animation: float 5s infinite ease-in-out;
-        }
-
-        .p1 { left: 8%; top: 25%; }
-        .p2 { left: 18%; top: 45%; animation-delay: 1s; }
-        .p3 { left: 85%; top: 28%; animation-delay: 2s; }
-        .p4 { left: 92%; top: 50%; animation-delay: 3s; }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0); opacity: 0.5; }
-            50% { transform: translateY(-30px); opacity: 1; }
+            padding: 80px 20px 40px; 
+            text-align: center;
         }
 
         .main-content-block {
-            position: relative;
-            z-index: 2;
             width: 100%;
-            max-width: 1350px;
+            max-width: 1200px;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
 
         .welcome-btn {
-            width: 380px;
-            max-width: 90%;
-            padding: 16px 30px;
+            padding: 14px 35px;
             border-radius: 50px;
             text-decoration: none;
-            font-size: 1.35rem;
+            font-size: 1.2rem;
             font-weight: 800;
             color: #001322;
-            background: linear-gradient(90deg, #00eaff, #00aaff, #00eaff);
-            box-shadow: 0 0 20px #00d9ff, 0 0 45px rgba(0, 200, 255, 0.6);
+            background: linear-gradient(90deg, #00eaff, #00aaff);
+            box-shadow: 0 0 25px rgba(0, 217, 255, 0.8);
             transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
 
         .welcome-btn:hover {
-            transform: translateY(-4px) scale(1.03);
-            box-shadow: 0 0 30px #00eaff, 0 0 65px rgba(0, 200, 255, 0.85);
+            transform: translateY(-3px);
+            box-shadow: 0 0 35px #00eaff;
         }
 
         .tagline {
-            font-size: clamp(1rem, 2vw, 1.3rem);
-            letter-spacing: 3px;
+            font-size: 1.1rem;
+            letter-spacing: 2px;
             text-transform: uppercase;
             color: #d8f5ff;
-            text-align: center;
-            text-shadow: 0 0 10px rgba(0, 200, 255, 0.5);
-            margin-bottom: 30px;
+            margin-bottom: 40px;
+            text-shadow: 0 0 8px rgba(0, 200, 255, 0.6);
         }
 
         /* =========================
            SERVICES GRID
         ========================= */
         .services {
-            position: relative;
-            z-index: 2;
             width: 100%;
             display: grid;
-            grid-template-columns: repeat( auto-fit, minmax(130px, 1fr) );
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
             gap: 15px;
             padding: 10px;
         }
 
         .service {
             background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(0, 207, 255, 0.2);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 207, 255, 0.25);
+            backdrop-filter: blur(8px);
             border-radius: 12px;
             padding: 20px 10px;
             text-align: center;
             transition: all 0.3s ease;
             cursor: pointer;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
         }
 
         .service:hover {
-            transform: translateY(-6px);
-            background: rgba(0, 207, 255, 0.12);
+            transform: translateY(-5px);
+            background: rgba(0, 207, 255, 0.15);
             border-color: #00cfff;
-            box-shadow: 0 8px 25px rgba(0, 207, 255, 0.3);
+            box-shadow: 0 5px 20px rgba(0, 207, 255, 0.4);
         }
 
         .service .icon {
-            width: 50px;
-            height: 50px;
+            width: 45px;
+            height: 45px;
             border-radius: 50%;
             border: 2px solid #00cfff;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 20px;
+            font-size: 18px;
             background: rgba(0, 80, 140, 0.3);
-            box-shadow: 0 0 12px rgba(0, 200, 255, 0.4);
-            margin-bottom: 12px;
+            margin: 0 auto 10px auto;
         }
 
         .service p {
-            margin: 0;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             font-weight: 500;
             color: #e2f7ff;
         }
     </style>
 </head>
+<body>
+
+    <!-- Header Banner -->
+    <header class="top-banner">
+        <a href="#" class="brand-link">
+            <div class="logo-ring">TF</div>
+            <div class="brand-text">
+                <h1>TECHFIX</h1>
+                <h2>SOLUTIONS</h2>
+            </div>
+        </a>
+    </header>
+
+    <!-- Main Hero Section -->
+    <main class="hero">
+        <div class="main-content-block">
+            <a href="#" class="welcome-btn">WELCOME TO TECHFIX</a>
+            <p class="tagline">Your Trusted IT & Software Partner</p>
+
+            <!-- Services Grid -->
+            <div class="services">
+                <div class="service">
+                    <div class="icon">💻</div>
+                    <p>Hardware Repair</p>
+                </div>
+                <div class="service">
+                    <div class="icon">🌐</div>
+                    <p>Networking</p>
+                </div>
+                <div class="service">
+                    <div class="icon">⚙️</div>
+                    <p>Software Automation</p>
+                </div>
+                <div class="service">
+                    <div class="icon">🔒</div>
+                    <p>Cyber Security</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
