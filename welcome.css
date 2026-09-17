@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #050b14; /* Deep Black/Dark Tech Background */
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow: hidden;
+}
+
+.boot-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+/* HP Style Central Logo */
+.logo-ring {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  padding: 5px;
+  background: #0d233a;
+  border: 2px solid #00e5ff;
+  box-shadow: 0 0 30px #00e5ff, inset 0 0 15px #00e5ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-ring img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Brand Text Styling */
+.brand-text {
+  text-align: center;
+}
+
+.brand-main {
+  font-size: 3rem;
+  font-weight: 900;
+  color: #00e5ff;
+  background: linear-gradient(180deg, #80f3ff 0%, #00c8fe 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 20px rgba(0, 229, 255, 0.5);
+  letter-spacing: 1px;
+}
+
+.brand-sub-container {
+  border-top: 2px solid #00e5ff;
+  border-bottom: 2px solid #00e5ff;
+  padding: 2px 8px;
+  margin-top: 5px;
+  display: inline-block;
+}
+
+.brand-sub {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 8px;
+}
+
+/* HP/Windows Style Circular Loader */
+.spinner {
+  width: 35px;
+  height: 35px;
+  margin-top: 20px;
+  border: 3px solid rgba(0, 229, 255, 0.2);
+  border-top: 3px solid #00e5ff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* Animations */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: scale(0.95); }
+  100% { opacity: 1; transform: scale(1); }
+}
