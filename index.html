@@ -1,21 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta http-equiv="refresh" content="3;url=index.html">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 3 Second Baad home.html Par Automatically Redirect Karega -->
+  <meta http-equiv="refresh" content="3;url=home.html">
   <title>TechFix Solutions - Welcome</title>
-  <link rel="stylesheet" href="welcome.css">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #050b14;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      overflow: hidden;
+    }
+
+    .boot-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 25px;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    /* Glowing Logo */
+    .logo-ring {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      padding: 5px;
+      background: #0d233a;
+      border: 2px solid #00e5ff;
+      box-shadow: 0 0 30px #00e5ff, inset 0 0 15px #00e5ff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo-ring img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    /* Brand Text */
+    .brand-text {
+      text-align: center;
+    }
+
+    .brand-main {
+      font-size: 3rem;
+      font-weight: 900;
+      color: #00e5ff;
+      background: linear-gradient(180deg, #80f3ff 0%, #00c8fe 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 20px rgba(0, 229, 255, 0.5);
+    }
+
+    .brand-sub-container {
+      border-top: 2px solid #00e5ff;
+      border-bottom: 2px solid #00e5ff;
+      padding: 2px 8px;
+      margin-top: 5px;
+      display: inline-block;
+    }
+
+    .brand-sub {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: 8px;
+    }
+
+    /* Spinner Loader */
+    .spinner {
+      width: 35px;
+      height: 35px;
+      margin-top: 20px;
+      border: 3px solid rgba(0, 229, 255, 0.2);
+      border-top: 3px solid #00e5ff;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: scale(0.95); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+  </style>
 </head>
 <body>
 
   <div class="boot-container">
-    <!-- Glowing Logo (HP Style Center Logo) -->
     <div class="logo-ring">
       <img src="Picture1.png" alt="TechFix Logo">
     </div>
 
-    <!-- Brand Name -->
     <div class="brand-text">
       <h1 class="brand-main">TechFix</h1>
       <div class="brand-sub-container">
@@ -23,7 +119,6 @@
       </div>
     </div>
 
-    <!-- Boot Loading Spinner (Windows/HP Boot Loader) -->
     <div class="spinner"></div>
   </div>
 
