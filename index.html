@@ -3,8 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- 3 Second Baad home.html Par Automatically Redirect Karega -->
-  <meta http-equiv="refresh" content="3;url=home.html">
   <title>TechFix Solutions - Welcome</title>
   
   <style>
@@ -29,10 +27,11 @@
       flex-direction: column;
       align-items: center;
       gap: 25px;
-      animation: fadeIn 1.5s ease-in-out;
+      /* Soft Pulse and Blur Fade-In Animation */
+      animation: emergeEffect 2.5s ease-out forwards;
     }
 
-    /* Glowing Logo */
+    /* Logo Styling + Soft Glow Effect */
     .logo-ring {
       width: 110px;
       height: 110px;
@@ -40,7 +39,8 @@
       padding: 5px;
       background: #0d233a;
       border: 2px solid #00e5ff;
-      box-shadow: 0 0 30px #00e5ff, inset 0 0 15px #00e5ff;
+      /* Soft Glow Ring */
+      box-shadow: 0 0 25px rgba(0, 229, 255, 0.6), inset 0 0 15px rgba(0, 229, 255, 0.4);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -58,6 +58,7 @@
       text-align: center;
     }
 
+    /* TechFix Title */
     .brand-main {
       font-size: 3rem;
       font-weight: 900;
@@ -65,9 +66,10 @@
       background: linear-gradient(180deg, #80f3ff 0%, #00c8fe 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      text-shadow: 0 0 20px rgba(0, 229, 255, 0.5);
+      text-shadow: 0 0 18px rgba(0, 229, 255, 0.5);
     }
 
+    /* SOLUTIONS Subtitle */
     .brand-sub-container {
       border-top: 2px solid #00e5ff;
       border-bottom: 2px solid #00e5ff;
@@ -94,24 +96,46 @@
       animation: spin 1s linear infinite;
     }
 
+    /* Smooth Emerge/Fade-In Keyframes */
+    @keyframes emergeEffect {
+      0% {
+        opacity: 0;
+        transform: scale(0.85);
+        filter: blur(10px);
+      }
+      50% {
+        opacity: 0.6;
+        filter: blur(4px);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0px);
+      }
+    }
+
     @keyframes spin {
       0% { transform: rotate(0deg); }
       100% { transform: rotate(360deg); }
     }
-
-    @keyframes fadeIn {
-      0% { opacity: 0; transform: scale(0.95); }
-      100% { opacity: 1; transform: scale(1); }
-    }
   </style>
+
+  <!-- 3 Second Redirect Script -->
+  <script>
+    setTimeout(function() {
+      window.location.href = "home.html";
+    }, 3000);
+  </script>
 </head>
 <body>
 
   <div class="boot-container">
+    <!-- Updated Logo File Name -->
     <div class="logo-ring">
       <img src="Logo.png" alt="TechFix Logo">
     </div>
 
+    <!-- Text Block -->
     <div class="brand-text">
       <h1 class="brand-main">TechFix</h1>
       <div class="brand-sub-container">
@@ -119,6 +143,7 @@
       </div>
     </div>
 
+    <!-- Loader -->
     <div class="spinner"></div>
   </div>
 
