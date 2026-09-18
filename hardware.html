@@ -3,46 +3,361 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hardware Services | TechFix Solutions</title>
+    <title>Computer & Laptop Repair | TechFix Solution</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: "Segoe UI", Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #ffffff;
+    min-height: 100vh;
+
+    /* Yahan bg-image.jpg ko apni image ke naam se badlein */
+    background: linear-gradient(rgba(3, 15, 30, 0.88), rgba(3, 15, 30, 0.88)), 
+                url('background.jpg') center/cover fixed no-repeat;
+    
+    background-color: #020b18;
+    padding: 40px 20px;
+
+
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             color: #ffffff;
             min-height: 100vh;
-            background: linear-gradient(rgba(3, 15, 30, 0.85), rgba(3, 15, 30, 0.85)), 
+            background: linear-gradient(rgba(3, 15, 30, 0.90), rgba(3, 15, 30, 0.90)), 
                         url('bg-image.jpg') center/cover fixed no-repeat;
+            background-color: #020b18;
             padding: 40px 20px;
         }
+
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.04);
             border: 1px solid rgba(0, 207, 255, 0.25);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: 30px;
+            backdrop-filter: blur(12px);
+            border-radius: 16px;
+            padding: 35px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
         }
-        h1 { color: #00d9ff; margin-bottom: 20px; text-shadow: 0 0 10px #00d9ff; }
-        p { line-height: 1.6; color: #e2f7ff; margin-bottom: 20px; }
+
         .back-btn {
             display: inline-block;
-            padding: 10px 25px;
+            margin-bottom: 25px;
+            padding: 10px 24px;
             background: linear-gradient(90deg, #00eaff, #00aaff);
             color: #001322;
             text-decoration: none;
             font-weight: bold;
             border-radius: 25px;
+            box-shadow: 0 0 15px rgba(0, 217, 255, 0.4);
             transition: all 0.3s ease;
         }
-        .back-btn:hover { transform: translateY(-2px); box-shadow: 0 0 15px #00eaff; }
+
+        .back-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 25px #00eaff;
+        }
+
+        .header-section {
+            margin-bottom: 35px;
+            border-bottom: 1px solid rgba(0, 207, 255, 0.2);
+            padding-bottom: 20px;
+        }
+
+        h1 {
+            color: #00d9ff;
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            text-shadow: 0 0 10px rgba(0, 217, 255, 0.4);
+        }
+
+        .intro-text {
+            color: #e2f7ff;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        .section-title {
+            color: #00d9ff;
+            font-size: 1.6rem;
+            margin: 30px 0 20px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Services Grid Layout */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(0, 207, 255, 0.15);
+            border-radius: 12px;
+            padding: 20px;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+            border-color: #00d9ff;
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 10px;
+        }
+
+        .card-icon {
+            font-size: 1.8rem;
+        }
+
+        .card-title {
+            font-size: 1.15rem;
+            color: #00eaff;
+            font-weight: 600;
+        }
+
+        .card-desc {
+            color: #cceeff;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* Process Steps Styling */
+        .process-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .process-step {
+            background: rgba(255, 255, 255, 0.02);
+            border-left: 4px solid #00d9ff;
+            padding: 15px 20px;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .step-title {
+            color: #00eaff;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .step-desc {
+            color: #d8f3ff;
+            font-size: 0.95rem;
+        }
+
+        /* Why Choose Us Grid */
+        .why-us-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 18px;
+            margin-bottom: 35px;
+        }
+
+        .why-card {
+            background: rgba(0, 217, 255, 0.05);
+            border: 1px dashed rgba(0, 207, 255, 0.3);
+            border-radius: 10px;
+            padding: 15px 20px;
+        }
+
+        .why-title {
+            color: #00eaff;
+            font-weight: bold;
+            margin-bottom: 6px;
+        }
+
+        .why-desc {
+            color: #cceeff;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .bottom-nav {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(0, 207, 255, 0.2);
+        }
+
     </style>
 </head>
 <body>
+
     <div class="container">
-        <h1>Hardware Repair & Maintenance</h1>
-        <p>Laptop repair, motherboard diagnostics, PC upgrades aur hardware troubleshooting services.</p>
-        <a href="home.html" class="back-btn">← Back to Home</a>
+        <!-- Top Back Button -->
+    
+
+        <!-- Header Section -->
+        <div class="header-section">
+            <h1>💻 Computer & Laptop Repair</h1>
+            <p class="intro-text">
+                Having a problem with your computer or laptop? At <strong>TechFix Solution</strong>, we provide reliable computer and laptop repair and technical support. We diagnose hardware and software problems and help get your device working smoothly again.
+            </p>
+        </div>
+
+        <!-- Services Section -->
+        <h2 class="section-title">🔧 Our Services</h2>
+        <div class="services-grid">
+
+            <div class="service-card">
+                <div class="card-header">
+                    <span class="card-icon">💻</span>
+                    <span class="card-title">Laptop Repair</span>
+                </div>
+                <p class="card-desc">Laptop not starting, hanging, crashing, overheating, and other common problems.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="card-header">
+                    <span class="card-icon">🖥️</span>
+                    <span class="card-title">Desktop Computer Repair</span>
+                </div>
+                <p class="card-desc">Checking and troubleshooting CPU, RAM, SMPS, motherboard, and other hardware.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="card-header">
+                    <span class="card-icon">🔋</span>
+                    <span class="card-title">Battery Replacement</span>
+                </div>
+                <p class="card-desc">Laptop battery checking and replacement support.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="card-header">
+                    <span class="card-icon">💾</span>
+                    <span class="card-title">Windows Installation</span>
+                </div>
+                <p class="card-desc">Windows installation, drivers, updates, and basic system setup.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="card-header">
+                    <span class="card-icon">⚡</span>
+                    <span class="card-title">Slow Computer / Laptop</span>
+                </div>
+                <p class="card-desc">Performance checking, troubleshooting, and system optimization.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="card-header">
+                    <span class="card-icon">🧹</span>
+                    <span class="card-title">Laptop Cleaning & Servicing</span>
+                </div>
+                <p class="card-desc">Dust cleaning and basic servicing to help reduce overheating.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="card-header">
+                    <span class="card-icon">🖨️</span>
+                    <span class="card-title">Printer Support</span>
+                </div>
+                <p class="card-desc">Printer installation, setup, configuration, and basic troubleshooting.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="card-header">
+                    <span class="card-icon">🌐</span>
+                    <span class="card-title">Internet & Network Problems</span>
+                </div>
+                <p class="card-desc">Wi-Fi, LAN, router, and basic network configuration.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="card-header">
+                    <span class="card-icon">💽</span>
+                    <span class="card-title">HDD / SSD Upgrade</span>
+                </div>
+                <p class="card-desc">Storage upgrades and data migration support.</p>
+            </div>
+
+            <div class="service-card">
+                <div class="card-header">
+                    <span class="card-icon">🛠️</span>
+                    <span class="card-title">Hardware Upgrade</span>
+                </div>
+                <p class="card-desc">RAM, SSD, and other compatible hardware upgrades.</p>
+            </div>
+
+        </div>
+
+        <!-- Repair Process Section -->
+        <h2 class="section-title">🔍 How Our Repair Process Works</h2>
+        <div class="process-list">
+            <div class="process-step">
+                <div class="step-title">1️⃣ Problem Check</div>
+                <div class="step-desc">We understand the problem and inspect your device.</div>
+            </div>
+            <div class="process-step">
+                <div class="step-title">2️⃣ Diagnosis</div>
+                <div class="step-desc">We identify the possible hardware or software issue.</div>
+            </div>
+            <div class="process-step">
+                <div class="step-title">3️⃣ Repair / Replacement</div>
+                <div class="step-desc">We repair the issue or recommend a suitable replacement if required.</div>
+            </div>
+            <div class="process-step">
+                <div class="step-title">4️⃣ Testing</div>
+                <div class="step-desc">The device is tested to make sure it is working properly.</div>
+            </div>
+            <div class="process-step">
+                <div class="step-title">5️⃣ Delivery</div>
+                <div class="step-desc">After successful testing, the device is ready for delivery.</div>
+            </div>
+        </div>
+
+        <!-- Why Choose Us Section -->
+        <h2 class="section-title">⭐ Why Choose TechFix Solution?</h2>
+        <div class="why-us-grid">
+            <div class="why-card">
+                <div class="why-title">✅ Simple & Transparent Service</div>
+                <div class="why-desc">We explain the problem in easy language.</div>
+            </div>
+            <div class="why-card">
+                <div class="why-title">✅ Proper Problem Diagnosis</div>
+                <div class="why-desc">We check the device before recommending a solution.</div>
+            </div>
+            <div class="why-card">
+                <div class="why-title">✅ Hardware & Software Support</div>
+                <div class="why-desc">Support for common computer and laptop hardware and software problems.</div>
+            </div>
+            <div class="why-card">
+                <div class="why-title">✅ Office & Home Support</div>
+                <div class="why-desc">Technical support can be provided at the office or home, where available.</div>
+            </div>
+            <div class="why-card">
+                <div class="why-title">✅ Problem Explained Before Repair</div>
+                <div class="why-desc">We explain the issue and required work before starting the repair.</div>
+            </div>
+            <div class="why-card">
+                <div class="why-title">✅ Professional Technical Support</div>
+                <div class="why-desc">Reliable technical assistance for everyday computer and laptop problems.</div>
+            </div>
+        </div>
+
+        <!-- Bottom Navigation -->
+        <div class="bottom-nav">
+            <a href="home.html" class="back-btn">← Back to Home</a>
+        </div>
+
     </div>
+
 </body>
 </html>
