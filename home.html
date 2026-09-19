@@ -8,7 +8,10 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+
+    <!-- High-Quality Tech Icon CDN (Prevents Broken Image Icons) -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
 
     <style>
         /* =========================
@@ -38,13 +41,12 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: var(--bg-main);
             color: var(--text-primary);
             overflow-x: hidden;
             line-height: 1.5;
             min-height: 100vh;
-            /* Background Image with Dark Gradient Layer */
             background-image: 
                 radial-gradient(circle at 50% 30%, rgba(0, 217, 255, 0.12), transparent 70%),
                 linear-gradient(180deg, rgba(3, 7, 18, 0.85) 0%, rgba(3, 7, 18, 0.95) 100%),
@@ -56,95 +58,102 @@
         }
 
         /* =========================
-           TOP NAVIGATION / BANNER logo ko left side karne k liye and Logo ko Chhota Bada Karne ke Liye
+           TOP NAVIGATION / BANNER
         ========================= */
         .top-banner {
             position: sticky;
             top: 0;
-            width: 110%;
-            min-height: 95px;
+            width: 100%;
+            min-height: 85px;
             background: rgba(3, 7, 18, 0.85);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(12px);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 0 1%;
+            padding: 0 6%;
             border-bottom: 1px solid var(--border-color);
             z-index: 100;
         }
 
         .brand-link {
             text-decoration: none;
-            display: inline-flex;
+            display: flex;
             align-items: center;
+            justify-content: flex-start;
             gap: 16px;
         }
 
         .logo-ring {
-            width: 55px;
-            height: 55px;
-            border-radius: 50%;
+            width: 52px;
+            height: 52px;
+            border-radius: 12px;
             background: rgba(15, 23, 42, 0.9);
-            border: 2px solid var(--accent-blue);
+            border: 1.5px solid var(--accent-blue);
             padding: 3px;
-            box-shadow: 0 0 18px var(--accent-glow);
-            transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(0, 217, 255, 0.25);
             flex-shrink: 0;
         }
 
         .logo-ring img {
             width: 100%;
             height: 100%;
-            border-radius: 50%;
+            border-radius: 8px;
             object-fit: cover;
         }
-/* TECHFIX AUR SOLUTIONS KE BEECH KI UNDERLINE */
-.brand-underline {
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(90deg, #00d9ff 0%, rgba(0, 217, 255, 0.2) 100%);
-    margin: 4px 0 3px 0;
-    border-radius: 2px;
-    box-shadow: 0 0 8px rgba(0, 217, 255, 0.6);
-}
-      .brand-text h1 {
-    font-family: 'Syne', sans-serif;
-    font-size: clamp(1.6rem, 2.5vw, 2.1rem);
-    font-weight: 800;
-    color: #ffffff;
-    line-height: 1;
-    margin: 0;
-}
 
+        .brand-text {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+        }
 
+        .brand-text h1 {
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(1.6rem, 2.5vw, 2.1rem);
+            font-weight: 800;
+            color: #ffffff;
+            line-height: 1;
+            margin: 0;
+        }
 
-.brand-text h1 span {
-    background: linear-gradient(135deg, #00d9ff 0%, #007cff 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
+        .brand-text h1 span {
+            background: linear-gradient(135deg, #00d9ff 0%, #007cff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
+        /* Underline between TechFix and SOLUTIONS */
+        .brand-underline {
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, #00d9ff 0%, rgba(0, 217, 255, 0.2) 100%);
+            margin: 4px 0;
+            border-radius: 2px;
+            box-shadow: 0 0 8px rgba(0, 217, 255, 0.6);
+        }
 
+        .brand-text h2 {
+            font-size: 0.65rem;
+            letter-spacing: 3.5px;
+            font-weight: 700;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            margin: 0;
+        }
 
-.brand-text h2 {
-    font-size: 0.65rem;
-    letter-spacing: 3.5px;
-    font-weight: 700;
-    color: var(--text-secondary);
-    text-transform: uppercase;
-}
         .nav-status {
             display: flex;
             align-items: center;
             gap: 8px;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: #10b981;
             font-weight: 600;
-            background: rgba(16, 185, 129, 0.1);
+            background: rgba(16, 185, 129, 0.08);
             padding: 6px 14px;
             border-radius: 50px;
-            border: 1px solid rgba(16, 185, 129, 0.3);
+            border: 1px solid rgba(16, 185, 129, 0.25);
         }
 
         .status-dot {
@@ -152,24 +161,20 @@
             height: 8px;
             background-color: #10b981;
             border-radius: 50%;
-            box-shadow: 0 0 8px #10b981;
+            box-shadow: 0 0 10px #10b981;
         }
 
         /* =========================
            HERO SECTION
         ========================= */
         .hero {
-            position: relative;
             padding: 40px 20px 80px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
         }
 
         .main-content-block {
-            position: relative;
-            z-index: 2;
             width: 100%;
             max-width: 1100px;
             display: flex;
@@ -180,14 +185,14 @@
 
         .hero-title-group {
             text-align: center;
-            max-width: 750px;
+            max-width: 800px;
         }
 
         .hero-title-group h2 {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+            font-family: 'Syne', sans-serif;
+            font-size: clamp(1.9rem, 3.8vw, 3rem);
             font-weight: 800;
-            line-height: 1.25;
+            line-height: 1.2;
             margin-bottom: 12px;
             background: linear-gradient(180deg, #ffffff 0%, #cbd5e1 100%);
             -webkit-background-clip: text;
@@ -197,25 +202,23 @@
         .hero-title-group p {
             font-size: 1rem;
             color: var(--text-secondary);
-            font-weight: 400;
         }
 
-        /* SEARCH BAR */
+        /* SEARCH BAR (WIDER SIZE) */
         .search-box {
             width: 100%;
-            max-width: 2050px;
+            max-width: 800px;
             position: relative;
-            margin-top: 10px;
         }
 
         .search-box input {
             width: 100%;
-            padding: 14px 20px 14px 45px;
-            background: rgba(15, 23, 42, 0.8);
+            padding: 16px 20px 16px 50px;
+            background: rgba(15, 23, 42, 0.85);
             border: 1px solid var(--border-color);
             border-radius: 50px;
             color: #fff;
-            font-size: 0.95rem;
+            font-size: 1rem;
             outline: none;
             backdrop-filter: blur(10px);
             transition: all 0.3s ease;
@@ -223,20 +226,20 @@
 
         .search-box input:focus {
             border-color: var(--accent-blue);
-            box-shadow: 0 0 20px rgba(0, 217, 255, 0.3);
+            box-shadow: 0 0 25px rgba(0, 217, 255, 0.35);
         }
 
         .search-box::before {
             content: "🔍";
             position: absolute;
-            left: 16px;
+            left: 20px;
             top: 50%;
             transform: translateY(-50%);
-            font-size: 1rem;
+            font-size: 1.1rem;
             opacity: 0.6;
         }
 
-        /* METRICS / STATS BAR */
+        /* METRICS BAR */
         .stats-bar {
             width: 100%;
             max-width: 900px;
@@ -248,7 +251,6 @@
             border-radius: 14px;
             padding: 16px;
             backdrop-filter: blur(10px);
-            margin-top: 10px;
         }
 
         .stat-item {
@@ -261,7 +263,8 @@
         }
 
         .stat-item h3 {
-            font-size: 1.3rem;
+            font-family: 'Syne', sans-serif;
+            font-size: 1.4rem;
             font-weight: 800;
             color: var(--accent-blue);
         }
@@ -270,11 +273,10 @@
             font-size: 0.75rem;
             color: var(--text-secondary);
             text-transform: uppercase;
-            letter-spacing: 0.5px;
         }
 
         /* =========================
-           SERVICES GRID (3 COLUMNS)
+           SERVICES GRID (ICON LEFT)
         ========================= */
         .services-wrapper {
             width: 100%;
@@ -307,80 +309,69 @@
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border-radius: 16px;
-            padding: 24px 16px;
-            text-align: center;
+            padding: 20px 22px;
             text-decoration: none;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 14px;
+            
+            /* Icon Left & Text Right Alignment */
+            display: flex !important;
+            flex-direction: row !important;
+            align-items: center !important;
+            justify-content: flex-start !important;
+            text-align: left !important;
+            gap: 16px !important;
+            
             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
             position: relative;
             overflow: hidden;
         }
 
-        .service::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--accent-blue), transparent);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .service:hover::before {
-            opacity: 1;
-        }
-
         .service:hover {
-            transform: translateY(-5px);
+            transform: translateY(-4px);
             background: var(--bg-card-hover);
             border-color: var(--border-hover);
-            box-shadow: 0 12px 30px -10px rgba(0, 217, 255, 0.35);
+            box-shadow: 0 10px 25px -10px rgba(0, 217, 255, 0.35);
         }
 
-      .service .icon {
-    width: 48px;
-    height: 48px;
-    border-radius: 10px;
-    background: rgba(3, 7, 18, 0.8);
-    border: 1px solid rgba(56, 189, 248, 0.3);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-shrink: 0;
-    transition: all 0.3s ease;
-    overflow: hidden; /* Extra image margins cut karne ke liye */
-    padding: 20px; /* Image aur box border ke beech gap ke liye */
-    box-sizing: border-box;
-}   
+        /* Icon Container Box */
+        .service .icon {
+            width: 50px !important;
+            height: 50px !important;
+            min-width: 50px !important;
+            min-height: 50px !important;
+            border-radius: 12px;
+            background: rgba(3, 7, 18, 0.85);
+            border: 1px solid rgba(0, 217, 255, 0.3);
+            box-shadow: inset 0 0 10px rgba(0, 217, 255, 0.15);
+            
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+            flex-shrink: 0 !important;
+            padding: 10px !important;
+            box-sizing: border-box !important;
+        }
 
-        /* Icon ke andar ki image ki styling */
-    .service .icon img 
-                width: 100%;
-                height: 100%;
-                object-fit: contain; /* Image distort nahi hogi */
-                display: block;
-                padding: 20px; /* Padding badhane se image chhoti ho jayegi (e.g. 6px ya 8px) */
-        .service:hover .icon {
-            border-color: var(--accent-blue);
-            background: rgba(0, 217, 255, 0.15);
-            box-shadow: 0 0 15px rgba(0, 217, 255, 0.4);
-            transform: scale(1.08);
+        .service .icon i {
+            font-size: 24px;
+            color: var(--accent-blue);
+        }
+
+        .service .icon img {
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: contain !important;
+            display: block !important;
         }
 
         .service p {
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             font-weight: 600;
             color: var(--text-primary);
             line-height: 1.35;
+            margin: 0;
         }
 
-        /* FLOATING ACTION BUTTON (WHATSAPP/CALL) */
+        /* FLOATING ACTION BUTTON */
         .float-contact {
             position: fixed;
             bottom: 25px;
@@ -396,16 +387,14 @@
             font-size: 26px;
             box-shadow: 0 4px 18px rgba(37, 211, 102, 0.5);
             z-index: 1000;
-            transition: all 0.3s ease;
             text-decoration: none;
+            transition: all 0.3s ease;
         }
 
         .float-contact:hover {
             transform: scale(1.1);
-            box-shadow: 0 6px 25px rgba(37, 211, 102, 0.7);
         }
 
-        /* FOOTER */
         footer {
             width: 100%;
             border-top: 1px solid var(--border-color);
@@ -416,65 +405,15 @@
             color: var(--text-secondary);
         }
 
-        /* RESPONSIVE DESIGN */
-        @media (max-width: 768px) {
-            .stats-bar {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 12px;
-            }
-            .stat-item:nth-child(2) {
-                border-right: none;
-            }
-            .nav-status {
-                display: none;
-            }
+        @media (max-width: 900px) {
+            .services { grid-template-columns: repeat(2, 1fr); }
         }
 
-        @media (max-width: 540px) {
-            .services {
-                grid-template-columns: repeat(3, 1fr);
-                gap: 10px;
-            }
-            .service {
-                padding: 16px 8px;
-            }
-            .service .icon {
-                width: 42px;
-                height: 36px;
-                font-size: 16px;
-            }
-            .service p {
-                font-size: 0.72rem;
-            }
+        @media (max-width: 600px) {
+            .services { grid-template-columns: repeat(1, 1fr); }
+            .stats-bar { grid-template-columns: repeat(2, 1fr); }
+            .nav-status { display: none; }
         }
-
-/* ICON CONTAINER FIX */
-.service .icon {
-    width: 50px !important;
-    height: 50px !important;
-    min-width: 90px !important; /* Box ko pichakne se rokega */
-    min-height: 80px !important;
-    border-radius: 10px;
-    background: rgba(3, 7, 18, 0.8);
-    border: 1px solid rgba(56, 189, 248, 0.3);
-    
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    padding: 8px !important; /* Box ke andar sahi gap banayega */
-    box-sizing: border-box !important;
-    overflow: hidden !important;
-}
-
-/* IMAGE FIT INSIDE CONTAINER */
-.service .icon img {
-    width: 100% !important;
-    height: 100% !important;
-    max-width: 100% !important;
-    max-height: 100% !important;
-    object-fit: contain !important; /* Image Bina Stretch Ya Cut Huye Perfect Fit Hogi */
-    display: block !important;
-}
     </style>
 </head>
 
@@ -482,16 +421,15 @@
 
     <!-- TOP NAVIGATION -->
     <header class="top-banner">
-        <a href="index.html" class="brand-link" title="TechFix Solutions Home">
+        <a href="index.html" class="brand-link">
             <div class="logo-ring">
-                <img src="Logo.png" alt="TechFix Solutions Logo">
+                <img src="Logo.png" alt="Logo">
             </div>
             <div class="brand-text">
                 <h1><span>Tech</span>Fix</h1>
-                 <div class="brand-underline"></div>
-                 <h2>SOLUTIONS</h2>          
-                
-             </div>
+                <div class="brand-underline"></div>
+                <h2>SOLUTIONS</h2>
+            </div>
         </a>
 
         <div class="nav-status">
@@ -508,12 +446,11 @@
                 <p>High-efficiency technical management, hardware maintenance, and digital operations support.</p>
             </div>
 
-            <!-- SEARCH BAR -->
             <div class="search-box">
                 <input type="text" id="serviceSearch" placeholder="Search service (e.g. Laptop, Aadhaar, Excel)..." onkeyup="filterServices()">
             </div>
 
-            <!-- ANIMATED METRICS BAR -->
+            <!-- METRICS COUNTER -->
             <div class="stats-bar">
                 <div class="stat-item">
                     <h3 class="counter" data-target="99.9">0</h3>
@@ -525,11 +462,11 @@
                 </div>
                 <div class="stat-item">
                     <h3 class="counter" data-target="100">0</h3>
-                    <p>% Data Security</p>
+                    <p>% Security</p>
                 </div>
                 <div class="stat-item">
                     <h3 class="counter" data-target="1000">0</h3>
-                    <p>+ Clients Served</p>
+                    <p>+ Clients</p>
                 </div>
             </div>
 
@@ -543,65 +480,66 @@
 
                     <a href="hardware.html" class="service">
                         <div class="icon">
-                        <img src="C:\Users\Shahrukh\Downloads\desktop-tablet-laptop-removebg-preview.png" alt="Computer Services">
+                            <!-- Agar image use karni ho to: <img src="icons/hardware.png" alt="Hardware"> -->
+                            <i class="ri-computer-line"></i>
                         </div>
-                        <p>Computer &<br>Laptop Repair</p>
+                        <p>Hardware & Laptop Repair</p>
                     </a>
 
                     <a href="aadhaar.html" class="service">
                         <div class="icon">
-                        <img src="C:\Users\Shahrukh\Downloads\Screenshot_2026-09-19_134237-removebg-preview.png" alt="Aadhaar Services">
+                            <i class="ri-fingerprint-line"></i>
                         </div>
-                        <p>Aadhaar IT<br>Specialist</p>
+                        <p>Aadhaar IT Services</p>
                     </a>
 
                     <a href="excel.html" class="service">
                         <div class="icon">
-                    <img src="C:\Users\Shahrukh\Downloads\excel.png" alt="Aadhaar Services">
+                            <i class="ri-file-excel-2-line"></i>
                         </div>
-                        <p>Excel & Data<br>Automation</p>
+                        <p>Excel & Data Automation</p>
                     </a>
 
                     <a href="data-services.html" class="service">
                         <div class="icon">
-                        <img src="C:\Users\Shahrukh\Downloads\data-management-pie-chart-tall-removebg-preview.png"alt="Data Management">
+                            <i class="ri-database-2-line"></i>
                         </div>
-                        <p>Data & Digital<br>Processing</p>
+                        <p>Data & Digital Processing</p>
                     </a>
 
                     <a href="software.html" class="service">
                         <div class="icon">
-                    <img src="C:\Users\Shahrukh\Downloads\Screenshot_2026-09-19_134237-removebg-preview.png" alt="Aadhaar Services">
+                            <i class="ri-shield-keyhole-line"></i>
                         </div>
-                        <p>Software<br>Solutions</p>
+                        <p>Software Deployment</p>
                     </a>
 
                     <a href="networking.html" class="service">
                         <div class="icon">
-                    <img src="C:\Users\Shahrukh\Downloads\Network.png"alt="Aadhaar Services">
+                            <i class="ri-router-line"></i>
                         </div>
-                        <p>Printer <br> Networking </p>
+                        <p>Network & Peripherals</p>
                     </a>
 
                     <a href="amc.html" class="service">
                         <div class="icon">
-                    <img src="C:\Users\Shahrukh\Downloads\Screenshot_2026-09-19_134237-removebg-preview.png" alt="Aadhaar Services">
+                            <i class="ri-settings-4-line"></i>
                         </div>
-                        <p>AMC & IT Support<br>Support</p>
+                        <p>Corporate AMC & Support</p>
                     </a>
 
                     <a href="cctv.html" class="service">
                         <div class="icon">
-                    <img src="C:\Users\Shahrukh\Downloads\Screenshot_2026-09-19_134237-removebg-preview.png" alt="Aadhaar Services">
+                            <i class="ri-vidicon-line"></i>
                         </div>
-                        <p>CCTV <br>Installation</p>
+                        <p>Surveillance & CCTV Systems</p>
                     </a>
 
                     <a href="webdesign.html" class="service">
                         <div class="icon">
-                    <img src="C:\Users\Shahrukh\Downloads\Screenshot_2026-09-19_134237-removebg-preview.png" alt="Aadhaar Services">
+                            <i class="ri-global-line"></i>
                         </div>
-                        <p>Web<br> Design</p>
+                        <p>Web Architecture & Design</p>
                     </a>
 
                 </div>
@@ -622,7 +560,6 @@
 
     <!-- INTERACTIVE JAVASCRIPT -->
     <script>
-        // Real-Time Search Filter Function
         function filterServices() {
             let input = document.getElementById('serviceSearch').value.toLowerCase();
             let cards = document.getElementsByClassName('service');
@@ -637,7 +574,6 @@
             }
         }
 
-        // Animated Counters
         document.addEventListener("DOMContentLoaded", () => {
             const counters = document.querySelectorAll('.counter');
             counters.forEach(counter => {
