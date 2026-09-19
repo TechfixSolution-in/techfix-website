@@ -403,6 +403,31 @@
             z-index: 1;
         }
 
+        .nav-contact-item {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.nav-contact-item i {
+    color: var(--accent-cyan);
+}
+
+.nav-contact-item:hover {
+    color: var(--text-primary);
+    border-color: var(--accent-cyan);
+    box-shadow: 0 0 10px var(--accent-glow);
+}
+
         /* FLOATING ACTION BUTTON */
         .float-contact {
             position: fixed;
@@ -465,7 +490,14 @@
                 <h2>SOLUTIONS</h2>
             </div>
         </a>
-
+            <div class="nav-right-group" style="display: flex; align-items: center; gap: 15px;">
+        <a href="tel:+918859505384" class="nav-contact-item">
+            <i class="ri-phone-fill"></i> +91 8859505384
+        </a>
+        <a href="mailto:techfixsolution25@gmail.com" class="nav-contact-item">
+            <i class="ri-mail-fill"></i> Email Us
+        </a>
+        
         <div class="nav-status">
             <span class="status-dot"></span> System Operational
         </div>
